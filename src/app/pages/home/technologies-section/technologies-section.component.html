@@ -1,23 +1,40 @@
 <div  class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
 
   <div class="w-full flex flex-col space-y-1 justify-center items-start">
-    <app-sub-heading subHeadingText="What I work with"></app-sub-heading>
-    <app-heading [bgColor]="colors" headingText="Technologies & Skills"></app-heading>
+    <app-sub-heading subHeadingText="Con lo que trabajo."></app-sub-heading>
+    <app-heading [bgColor]="colors" headingText="Tecnologias y Skills"></app-heading>
   </div>
 
   <div #techUsed [@staggerFade]="inView ? 'open' : 'close'"
     class="w-full h-full space-x-2 md:space-x-20 py-5 md:py-20 flex justify-center items-center">
 
-    
-      <app-icon class="text-gray-600 eachStaggerComponent" iconType="HTML5" [iconSize]="sizeXXL"></app-icon>
+      <a href="https://angular.dev/" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="ANGULAR" [iconSize]="sizeXXL"></app-icon>
+      </a>
+      
+      <a href="https://tailwindcss.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="TAILWINDCSS" [iconSize]="sizeXXL"></app-icon>
+      </a>
 
-      <app-icon class="text-gray-600 eachStaggerComponent" iconType="TAILWINDCSS" [iconSize]="sizeXXL"></app-icon>
-
-      <app-icon class="text-gray-600 eachStaggerComponent" iconType="ANGULAR" [iconSize]="sizeXXL"></app-icon>
-
-      <app-icon class="text-gray-600 eachStaggerComponent" iconType="NODEJS" [iconSize]="sizeXXL"></app-icon>
-
-      <app-icon class="text-gray-600 eachStaggerComponent" iconType="MONGODB" [iconSize]="sizeXXL"></app-icon>
+      <a href="https://expressjs.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="NODEJS" [iconSize]="sizeXXL"></app-icon>
+      </a>
+      
+      <a href="https://spring.io/projects/spring-boot" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="SPRING_BOOT" [iconSize]="sizeXXL"></app-icon>
+      </a>
+      
+      <a href="https://www.oracle.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="ORACLE" [iconSize]="sizeXXL"></app-icon>
+      </a>
+      
+      <a href="https://www.postgresql.org/" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="POSTGRESQL" [iconSize]="sizeXXL"></app-icon>
+      </a>
+      
+      <a href="https://www.mongodb.com/es" target="_blank" class="text-gray-600 eachStaggerComponent">
+        <app-icon iconType="MONGODB" [iconSize]="sizeXXL"></app-icon>
+      </a>
 
   </div>
 </div>

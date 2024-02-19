@@ -18,16 +18,16 @@ export class RecommendationSectionComponent implements OnInit {
 
   testimonialDataList: Array<object> = [
     {
-      feedback: '"Working with Harsh was a real pleasure. His technical abilities and problem solving skills are top notch. He is always ready to move out of his comfort zone and learn new technologies. His dedication towards work is really commendable. He would be an asset to the team/organization he works with."',
-      feedbackBy: 'Shirsha Bhattacharyya'
-    },
-    {
-      feedback: '"I rarely come across a self-motivated talent who stand out like Harsh. Harsh is proactive, result oriented, responsible and technically sound person. Harsh’s ability to troubleshoot and analyse a technical problem was unlike any I’ve seen before."',
-      feedbackBy: 'Neha Verma'
-    },
-    {
-      feedback: '"Not many people can be so efficient as Harsh. I enjoyed working with Harsh for one year as full stack developer. I have always been amazed by Harsh’s ability to act in a highly stressful environment."',
-      feedbackBy: 'Saurabh Srivastava'
+      feedback: '"Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes. Siempre en busca de nuevos desafíos y oportunidades para crecer en la industria tecnológica. #DesarrolladorSoftware #Tecnología #InnovaciónApasionado."',
+      feedbackBy: 'Luis Angel Flores Galindo (Angular Developer)'
+    // },
+    // {
+    //   feedback: '"I rarely come across a self-motivated talent who stand out like Harsh. Harsh is proactive, result oriented, responsible and technically sound person. Harsh’s ability to troubleshoot and analyse a technical problem was unlike any I’ve seen before."',
+    //   feedbackBy: 'Neha Verma'
+    // },
+    // {
+    //   feedback: '"Not many people can be so efficient as Harsh. I enjoyed working with Harsh for one year as full stack developer. I have always been amazed by Harsh’s ability to act in a highly stressful environment."',
+    //   feedbackBy: 'Saurabh Srivastava'
     }
   ]
   constructor() { }

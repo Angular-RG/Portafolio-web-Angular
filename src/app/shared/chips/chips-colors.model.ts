@@ -30,6 +30,31 @@ export enum ChipsColorClasses {
 
     PINK700 = " bg-pink-700 text-white ",
 
+    deepBlue = "bg-deepBlue text-white",
+
+    darkPurple = "bg-darkPurple text-white",
+
+    burgundy = "bg-burgundy text-white",
+
+    darkBrown = "bg-darkBrown text-white",
+
+    forestGreen = "bg-forestGreen text-white",
+
+    deepGreen = "bg-deepGreen text-white",
+
+    midnightBlue = "bg-midnightBlue text-white",
+    
+    royalPurple = "bg-royalPurple text-white",
+    
+    wineRed = "bg-wineRed text-white",
+    
+    darkChocolate = "bg-darkChocolate text-white",
+    
+    mossGreen = "bg-mossGreen text-white",
+    
+    seaGreen = "bg-seaGreen text-white",
+
+
     DEFAULT = "text-gray-800 "
 }
 
@@ -57,5 +82,19 @@ export enum ChipsColors {
     PINK600 = 'PINK600',
     PINK700 = 'PINK700',
 
+    deepBlue = 'deepBlue',
+    darkPurple = 'darkPurple',
+    burgundy = 'burgundy',
+    darkBrown = 'darkBrown',
+    forestGreen = 'forestGreen',
+    deepGreen = 'deepGreen',
+
+    midnightBlue = 'midnightBlue',
+    royalPurple = 'royalPurple',
+    wineRed = 'wineRed',
+    darkChocolate = 'darkChocolate',
+    mossGreen = 'mossGreen',
+    seaGreen = 'seaGreen',
+    
     DEFAULT = 'DEFAULT'
 }

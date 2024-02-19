@@ -6,21 +6,24 @@
       class="w-full md:w-1/2 h-full px-5 md:px-16 space-y-2 md:space-y-10 flex flex-col justify-center  items-center ">
 
       <div class="flex flex-col justify-center items-center md:items-start w-full">
-        <app-sub-heading @slideInFromRightAndFade  subHeadingText="Who am I"></app-sub-heading>
-        <app-heading @slideInFromRightAndFade  [bgColor]="colorsDefault" headingText="About Me"></app-heading>
+        <app-sub-heading @slideInFromRightAndFade  subHeadingText="Quien soy"></app-sub-heading>
+        <app-heading @slideInFromRightAndFade  [bgColor]="colorsDefault" headingText="Acerca de mi"></app-heading>
       </div>
 
       <div
         class="flex w-full text-gray-400 md:pr-20 font-base text-lg md:text-xl justify-center md:justify-start items-center">
-        <span @slideInFromRightAndFade  class="text-center md:text-left">Hey, I'm Hector Adrian Roman. I am Web Developer working as a Software Engineer at Google having total of more than 3 years of experience under my belt. I am
-          based out of Kolkata, India 🇮🇳
+        <span @slideInFromRightAndFade  class="text-center md:text-left">
+          Hola, soy Héctor Adrián Román. Soy Desarrollador Web y trabajo como 
+          Full Stack en el Gobierno del Estado de Durango (CETIC), 
+          con un total de más de 3 años de experiencia.
           <br>
-          I am experienced in building Java and JavaScript based webapps. I am comfortable working with web technologies
-          like Angular, Node.js, Express.js & MongoDB.</span>
+          Tengo experiencia en la construcción de aplicaciones web basadas en Java,
+          JavaScript y Typescrip. Me siento cómodo trabajando con tecnologías web como 
+          Angular, Node.js, Express.js, Spring Framework, Spring Boot, Oracle, PostgreSQL y MongoDB.</span>
       </div>
 
       <div class="flex w-full justify-center md:justify-start  items-center">
-        <app-custom-button @slideInFromRightAndFade  (onBtnClicked)="openResume($event)" [size]="frontSizeLG" [bgColor]="color" btnLabel="Download Resume"
+        <app-custom-button @slideInFromRightAndFade  (onBtnClicked)="openResume($event)" [size]="frontSizeLG" [bgColor]="color" btnLabel="Descargar CV"
           [isIconActive]="true" iconType="DOWNLOAD" [iconSize]="sizeMD" >
         </app-custom-button>
       </div>

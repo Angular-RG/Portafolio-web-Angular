@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, View
 import { fade, fadeInView, staggerFade } from 'src/app/animations/animations';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
+import { Arquitectura, ProjectCards } from '../interfaces/project-cards.interface';
 
 @Component({
   selector: 'app-projects-section',
@@ -17,50 +18,62 @@ export class ProjectsSectionComponent implements OnInit {
   inViewList: Array<boolean> = [];
   colors = HeadingColors.DEFAULT_GRADIENT
 
-  projects: Array<any> = [
+  projects: Array<ProjectCards> = [
     {
       projectImg: 'structuresWizImg.png',
-      projectName: 'Structures-Wiz',
-      projectDescription: 'An optimised 🚀 implementation of Data structures like Stack, Queue, Priority Queue, Linked List etc for enterprise usage in our favourite ❤️ language - JavaScript',
-      isProjectLinkPresent: true,
+      projectName: 'Sistema Estatal de Ingresos',
+      projectDescription: 'Sistema para el manejo de los datos vehiculares de los contribuyentes del estado de Durango, generación de tramites de altas, bajas, cambios, replaqueos, concesiones vehiculares entre otros. generación de reportes, contiene un modulo extenso de cobros y validaciones entre los usuarios que lo operan.',
+      isProjectLinkPresent: false,
       projectLiveLink: 'https://www.npmjs.com/package/structures-wiz',
-      isProjectGithubLinkPresent: true,
+      isProjectGithubLinkPresent: false,
       projectGithubLink: 'https://github.com/harsh07bharvada/structures-wiz',
-      isOpenSource: true
+      isOpenSource: false,
+      arquitectura: Arquitectura.MICRO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
     },
     {
       projectImg: 'horrorscopeImg.png',
-      projectName: 'Horrorscope',
-      projectDescription: 'Webapp to explore more about your zodiac sign and which celebrity one shares it’s zodiac sign.',
-      isProjectLinkPresent: true,
+      projectName: 'Sistema de Entrega Recepcion',
+      projectDescription: 'Sistema con el cual se pueda llevar el proceso de entrega recepción, en la administración del gobierno del estado de Durango, desde la entrega de una unidad administrativa, hasta secretarias o direcciones gubernamentales, para poder facilitar este proceso a los servidores públicos y generarlo en un menor tiempo ya que cuenta con roles configurables para cada usuario que ingrese al sistema, así mismo cuenta con servicio de correo electrónico para que cada cambio se notifique al o los usuarios involucrados en cada proceso.',
+      isProjectLinkPresent: false,
       projectLiveLink: 'https://your-horrorscope.netlify.app/',
-      isProjectGithubLinkPresent: true,
+      isProjectGithubLinkPresent: false,
       projectGithubLink: 'https://github.com/harsh07bharvada/Horrorscope',
-      isOpenSource: false
+      isOpenSource: false,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
+
     },
     {
       projectImg: 'clothingStoreImg.png',
-      projectName: 'Clothing Store',
-      projectDescription: 'Fashion e-commerce webapp with Stripe Payments integration.',
+      projectName: 'API Durango-Digital',
+      projectDescription: 'API Rest. Para el consumo de peticiones HTTP, para la creacion, gestios y cobro de tramites vehiculares, registro civil, impuesto predial y declaraciones mensuales, trimestrales o anuales.',
       isProjectLinkPresent: true,
-      projectLiveLink: 'https://thecloth.netlify.app/',
-      isProjectGithubLinkPresent: true,
+      projectLiveLink: 'https://www.pagos.durango.gob.mx/',
+      isProjectGithubLinkPresent: false,
       projectGithubLink: 'https://github.com/harsh07bharvada/Clothing-Store',
-      isOpenSource: false
-    }, {
+      isOpenSource: false,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
+
+    }, 
+    {
       projectImg: 'elektrofyImg.png',
-      projectName: 'Elektrofy',
-      projectDescription: 'Electrical items e-commerce shop with images upload to Google drive for the clients',
+      projectName: 'Registro Unico de Beneficiarios (RUB)',
+      projectDescription: 'Sistema para la creacion, supervision y gestion de solicitudes de la poblacion en general.',
       isProjectLinkPresent: true,
       projectLiveLink: 'https://www.elektrofy.com/',
       isProjectGithubLinkPresent: true,
       projectGithubLink: 'https://github.com/Elektrofy/Elektrofy',
-      isOpenSource: false
+      isOpenSource: false,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' } ]
     }
   ]
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   @HostListener('window:scroll')

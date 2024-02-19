@@ -24,7 +24,7 @@ export class AboutSectionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //Todo: Cambiar por mi CV
   openResume(event: any) {
     window.open("assets/files/Harsh_Bharvada.pdf", "_blank");
   }

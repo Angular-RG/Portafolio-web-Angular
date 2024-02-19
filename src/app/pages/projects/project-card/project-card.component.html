@@ -16,14 +16,26 @@
     </span>
 
     <div class="flex w-full justify-end items-center">
-      <app-chips [name]="project.isOpenSource ? 'Open-Source' : 'Side-Project'"
-        [type]="project.isOpenSource ? colorPink : colorGreen"></app-chips>
+      <app-chips [name]="project.arquitectura"
+        [type]="project.arquitectura === 'Monolitica' ? colorPink : colorBlue"></app-chips>
     </div>
 
     <!-- PROJECT DESCRIPTION  -->
     <span class="flex w-fulljustify-end items-center text-gray-500 text-2xl text-right">
       {{project.projectDescription}}
     </span>
+
+  
+    <div class="flex  w-full justify-end space-x-3 items-center">
+      <ng-container *ngFor="let tecnologia of project.tecnologias, let i = index">
+        <app-chips [name]="tecnologia.nombre"
+          [type]="colorGreen"
+          >
+        </app-chips>
+      </ng-container>
+    </div>
+
+    
 
     <!-- BUTTON SECTION -->
     <div class="flex  w-full justify-end space-x-3 items-center">
