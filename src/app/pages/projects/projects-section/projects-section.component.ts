@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { fade, fadeInView, staggerFade } from 'src/app/animations/animations';
+import { Component, ElementRef, HostListener, OnInit, ViewChildren } from '@angular/core';
+import { fadeInView } from 'src/app/animations/animations';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
 import { Arquitectura, ProjectCards } from '../interfaces/project-cards.interface';
@@ -26,7 +26,7 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectLinkPresent: false,
       projectLiveLink: 'https://www.npmjs.com/package/structures-wiz',
       isProjectGithubLinkPresent: false,
-      projectGithubLink: 'https://github.com/harsh07bharvada/structures-wiz',
+      projectGithubLink: undefined,
       isOpenSource: false,
       arquitectura: Arquitectura.MICRO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
@@ -38,7 +38,7 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectLinkPresent: false,
       projectLiveLink: 'https://your-horrorscope.netlify.app/',
       isProjectGithubLinkPresent: false,
-      projectGithubLink: 'https://github.com/harsh07bharvada/Horrorscope',
+      projectGithubLink: undefined,
       isOpenSource: false,
       arquitectura: Arquitectura.MONO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
@@ -48,38 +48,50 @@ export class ProjectsSectionComponent implements OnInit {
       projectImg: 'clothingStoreImg.png',
       projectName: 'API Durango-Digital',
       projectDescription: 'API Rest. Para el consumo de peticiones HTTP, para la creacion, gestios y cobro de tramites vehiculares, registro civil, impuesto predial y declaraciones mensuales, trimestrales o anuales.',
-      isProjectLinkPresent: true,
+      isProjectLinkPresent: false,
       projectLiveLink: 'https://www.pagos.durango.gob.mx/',
       isProjectGithubLinkPresent: false,
-      projectGithubLink: 'https://github.com/harsh07bharvada/Clothing-Store',
+      projectGithubLink: undefined,
       isOpenSource: false,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' } ]
 
-    }, 
+    },
     {
       projectImg: 'elektrofyImg.png',
       projectName: 'Registro Unico de Beneficiarios (RUB)',
-      projectDescription: 'Sistema para la creacion, supervision y gestion de solicitudes de la poblacion en general.',
+      projectDescription: 'Sistema para la creacion, supervision y gestion de solicitudes de la poblacion en general de los municipios.',
       isProjectLinkPresent: true,
-      projectLiveLink: 'https://www.elektrofy.com/',
-      isProjectGithubLinkPresent: true,
-      projectGithubLink: 'https://github.com/Elektrofy/Elektrofy',
+      projectLiveLink: 'https://rub.municipiodurango.gob.mx/sign-in?redirectURL=%2Finicio',
+      isProjectGithubLinkPresent: false,
+      projectGithubLink: undefined,
       isOpenSource: false,
       arquitectura: Arquitectura.MONO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' } ]
+    },
+    {
+      projectImg: 'elektrofyImg.png',
+      projectName: 'Licencias de Construccion (LICCO)',
+      projectDescription: 'Sistema para la creacion, revision, inspeccion, pago y cancelacion de licencias para la construccion, uso de suelo y numeros oficiales.',
+      isProjectLinkPresent: true,
+      projectLiveLink: 'https://desarrollourbanodigital.municipiodurango.gob.mx/#/login',
+      isProjectGithubLinkPresent: false,
+      projectGithubLink: undefined,
+      isOpenSource: false,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
     }
   ]
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   @HostListener('window:scroll')
   checkScroll() {
     const scrollPosition = window.pageYOffset + window.innerHeight;
-    
+
     this.projs.forEach((v: { nativeElement: { offsetTop: number; }; }, index: string | number) => {
       if (index && v && v.nativeElement.offsetTop <= scrollPosition) {
         this.inViewList[+index] = true;
