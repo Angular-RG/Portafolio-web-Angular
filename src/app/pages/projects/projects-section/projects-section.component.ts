@@ -28,18 +28,34 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
+      freelance: false,
       arquitectura: Arquitectura.MICRO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' }, { nombre: 'AWS', logo: '' } ]
     },
     {
       projectImg: 'horrorscopeImg.png',
-      projectName: 'Sistema de Entrega Recepcion',
+      projectName: 'Sistema de Incidencias (SIDI)',
+      projectDescription: 'Sistema para servidores públicos, para la gestion de faltas, permisos economicos, vacaciones, permisos de mando superior entre otros. En la parte administrativa para llevar un seguimiento de los trabajadores y poder ver en un concentrado general con la ayuda de filtos todas las incidencias de los trabajadores',
+      isProjectLinkPresent: false,
+      projectLiveLink: 'https://your-horrorscope.netlify.app/',
+      isProjectGithubLinkPresent: false,
+      projectGithubLink: undefined,
+      isOpenSource: false,
+      freelance: false,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
+
+    },
+    {
+      projectImg: 'horrorscopeImg.png',
+      projectName: 'Sistema de Entrega Recepcion Estatal',
       projectDescription: 'Sistema con el cual se pueda llevar el proceso de entrega recepción, en la administración del gobierno del estado de Durango, desde la entrega de una unidad administrativa, hasta secretarias o direcciones gubernamentales, para poder facilitar este proceso a los servidores públicos y generarlo en un menor tiempo ya que cuenta con roles configurables para cada usuario que ingrese al sistema, así mismo cuenta con servicio de correo electrónico para que cada cambio se notifique al o los usuarios involucrados en cada proceso.',
       isProjectLinkPresent: false,
       projectLiveLink: 'https://your-horrorscope.netlify.app/',
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
+      freelance: false,
       arquitectura: Arquitectura.MONO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
 
@@ -53,12 +69,13 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
+      freelance: false,
       arquitectura: Arquitectura.MONO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' } ]
 
     },
     {
-      projectImg: 'elektrofyImg.png',
+      projectImg: 'rub-inicio.png',
       projectName: 'Registro Unico de Beneficiarios (RUB)',
       projectDescription: 'Sistema para la creacion, supervision y gestion de solicitudes de la poblacion en general de los municipios.',
       isProjectLinkPresent: true,
@@ -66,11 +83,12 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
+      freelance: true,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' } ]
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
     },
     {
-      projectImg: 'elektrofyImg.png',
+      projectImg: 'licco-inicio.png',
       projectName: 'Licencias de Construccion (LICCO)',
       projectDescription: 'Sistema para la creacion, revision, inspeccion, pago y cancelacion de licencias para la construccion, uso de suelo y numeros oficiales.',
       isProjectLinkPresent: true,
@@ -78,6 +96,20 @@ export class ProjectsSectionComponent implements OnInit {
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
+      freelance: true,
+      arquitectura: Arquitectura.MONO,
+      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
+    },
+    {
+      projectImg: 'licco-inicio.png',
+      projectName: 'Sistema de  (SDARE)',
+      projectDescription: 'Sistema para la alta de empresas para su revision, inspeccion, pago, cancelacion en los ambitos de Fomento Economico, Salud, Proteccion Civil.',
+      isProjectLinkPresent: false,
+      projectLiveLink: '',
+      isProjectGithubLinkPresent: false,
+      projectGithubLink: undefined,
+      isOpenSource: false,
+      freelance: true,
       arquitectura: Arquitectura.MONO,
       tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
     }

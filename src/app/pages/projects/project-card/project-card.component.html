@@ -17,7 +17,7 @@
 
     <div class="flex w-full justify-end items-center">
       <app-chips [name]="project.arquitectura"
-        [type]="project.arquitectura === 'Monolitica' ? colorPink : colorBlue"></app-chips>
+        [type]="project.arquitectura === 'Monolitica' ? colorPink : colorany"></app-chips>
     </div>
 
     <!-- PROJECT DESCRIPTION  -->
@@ -25,7 +25,7 @@
       {{project.projectDescription}}
     </span>
 
-  
+
     <div class="flex  w-full justify-end space-x-3 items-center">
       <ng-container *ngFor="let tecnologia of project.tecnologias, let i = index">
         <app-chips [name]="tecnologia.nombre"
@@ -35,14 +35,14 @@
       </ng-container>
     </div>
 
-    
+
 
     <!-- BUTTON SECTION -->
     <div class="flex  w-full justify-end space-x-3 items-center">
 
       <!-- PROJECT LIVE LINK -->
       <app-custom-button *ngIf="project.isProjectLinkPresent" (onBtnClicked)="viewProject($event)" [size]="fontSize"
-        [bgColor]="colorINDIGO600" btnLabel="View" [isIconActive]="true" iconType="VIEW" [iconSize]="iconSize">
+        [bgColor]="colorINDIGO600" btnLabel="Ver" [isIconActive]="true" iconType="VIEW" [iconSize]="iconSize">
       </app-custom-button>
 
       <!-- PROJECT GITHUB LINK -->

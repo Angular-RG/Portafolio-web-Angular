@@ -10,6 +10,7 @@ export interface ProjectCards {
     isOpenSource?: boolean;
     arquitectura: Arquitectura;
     tecnologias?: Skills[];
+    freelance?: boolean;
 }
 
 interface Skills {
