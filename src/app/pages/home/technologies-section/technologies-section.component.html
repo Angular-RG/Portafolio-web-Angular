@@ -6,34 +6,54 @@
   </div>
 
   <div #techUsed [@staggerFade]="inView ? 'open' : 'close'"
-    class="w-full h-full space-x-2 md:space-x-20 py-5 md:py-20 flex justify-center items-center">
+    class="w-full h-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 py-5 md:py-20">
 
-      <a href="https://angular.dev/" target="_blank" class="text-gray-600 eachStaggerComponent">
+      <a href="https://angular.dev/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="ANGULAR" [iconSize]="sizeXXL"></app-icon>
       </a>
-      
-      <a href="https://tailwindcss.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+
+      <a href="https://www.typescriptlang.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="TYPESCRIPT" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://spring.io/projects/spring-boot" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="SPRING_BOOT" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://www.java.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="JAVA" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://tailwindcss.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="TAILWINDCSS" [iconSize]="sizeXXL"></app-icon>
       </a>
 
-      <a href="https://expressjs.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+      <a href="https://nodejs.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="NODEJS" [iconSize]="sizeXXL"></app-icon>
       </a>
-      
-      <a href="https://spring.io/projects/spring-boot" target="_blank" class="text-gray-600 eachStaggerComponent">
-        <app-icon iconType="SPRING_BOOT" [iconSize]="sizeXXL"></app-icon>
-      </a>
-      
-      <a href="https://www.oracle.com/" target="_blank" class="text-gray-600 eachStaggerComponent">
+
+      <a href="https://www.oracle.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="ORACLE" [iconSize]="sizeXXL"></app-icon>
       </a>
-      
-      <a href="https://www.postgresql.org/" target="_blank" class="text-gray-600 eachStaggerComponent">
+
+      <a href="https://www.postgresql.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="POSTGRESQL" [iconSize]="sizeXXL"></app-icon>
       </a>
-      
-      <a href="https://www.mongodb.com/es" target="_blank" class="text-gray-600 eachStaggerComponent">
+
+      <a href="https://www.mongodb.com/es" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
         <app-icon iconType="MONGODB" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://aws.amazon.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="AWS" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://git-scm.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="GIT" [iconSize]="sizeXXL"></app-icon>
+      </a>
+
+      <a href="https://www.docker.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
+        <app-icon iconType="DOCKER" [iconSize]="sizeXXL"></app-icon>
       </a>
 
   </div>

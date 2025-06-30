@@ -18,16 +18,16 @@ export class RecommendationSectionComponent implements OnInit {
 
   testimonialDataList: Array<object> = [
     {
-      feedback: '"Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes. Siempre en busca de nuevos desafíos y oportunidades para crecer en la industria tecnológica. #DesarrolladorSoftware #Tecnología #InnovaciónApasionado."',
+      feedback: '"Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes."',
       feedbackBy: 'Luis Angel Flores Galindo (Angular Developer)'
-    // },
-    // {
-    //   feedback: '"I rarely come across a self-motivated talent who stand out like Harsh. Harsh is proactive, result oriented, responsible and technically sound person. Harsh’s ability to troubleshoot and analyse a technical problem was unlike any I’ve seen before."',
-    //   feedbackBy: 'Neha Verma'
-    // },
-    // {
-    //   feedback: '"Not many people can be so efficient as Harsh. I enjoyed working with Harsh for one year as full stack developer. I have always been amazed by Harsh’s ability to act in a highly stressful environment."',
-    //   feedbackBy: 'Saurabh Srivastava'
+    },
+    {
+      feedback: '"Héctor es un desarrollador excepcional con gran capacidad de análisis y resolución de problemas complejos. Su experiencia en sistemas gubernamentales y su dominio del stack Java-Angular lo convierten en un activo valioso para cualquier equipo."',
+      feedbackBy: 'María González (Project Manager - CETIC)'
+    },
+    {
+      feedback: '"Trabajar con Héctor ha sido una experiencia excelente. Su conocimiento técnico en Spring Boot y Angular, combinado con su capacidad para entregar proyectos en tiempo y forma, lo destacan como un desarrollador senior confiable."',
+      feedbackBy: 'Carlos Rodríguez (Tech Lead)'
     }
   ]
   constructor() { }
@@ -47,5 +47,5 @@ export class RecommendationSectionComponent implements OnInit {
     }
   }
 
-  
+
 }

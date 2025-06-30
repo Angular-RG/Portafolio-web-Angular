@@ -21,63 +21,87 @@ export class ProjectsSectionComponent implements OnInit {
   projects: Array<ProjectCards> = [
     {
       projectImg: 'structuresWizImg.png',
-      projectName: 'Sistema Estatal de Ingresos',
-      projectDescription: 'Sistema para el manejo de los datos vehiculares de los contribuyentes del estado de Durango, generación de tramites de altas, bajas, cambios, replaqueos, concesiones vehiculares entre otros. generación de reportes, contiene un modulo extenso de cobros y validaciones entre los usuarios que lo operan.',
+      projectName: 'Sistema Estatal de Ingresos (SEI)',
+      projectDescription: 'Sistema integral para el manejo de datos vehiculares del estado de Durango. Incluye trámites de altas, bajas, cambios, replaqueos, concesiones vehiculares. Sistema de cobros, reportes y validaciones con arquitectura de microservicios.',
       isProjectLinkPresent: false,
-      projectLiveLink: 'https://www.npmjs.com/package/structures-wiz',
+      projectLiveLink: '',
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
       freelance: false,
       arquitectura: Arquitectura.MICRO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' }, { nombre: 'AWS', logo: '' } ]
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'TypeScript', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'Oracle', logo: '' },
+        { nombre: 'AWS', logo: '' }
+      ]
     },
     {
       projectImg: 'horrorscopeImg.png',
       projectName: 'Sistema de Incidencias (SIDI)',
-      projectDescription: 'Sistema para servidores públicos, para la gestion de faltas, permisos economicos, vacaciones, permisos de mando superior entre otros. En la parte administrativa para llevar un seguimiento de los trabajadores y poder ver en un concentrado general con la ayuda de filtos todas las incidencias de los trabajadores',
+      projectDescription: 'Plataforma para gestión de recursos humanos en el sector público. Manejo de faltas, permisos económicos, vacaciones, permisos de mando superior. Dashboard administrativo con filtros avanzados y reportes.',
       isProjectLinkPresent: false,
-      projectLiveLink: 'https://your-horrorscope.netlify.app/',
+      projectLiveLink: '',
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
       freelance: false,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
-
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'TypeScript', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'Oracle', logo: '' }
+      ]
     },
     {
       projectImg: 'horrorscopeImg.png',
-      projectName: 'Sistema de Entrega Recepcion Estatal',
-      projectDescription: 'Sistema con el cual se pueda llevar el proceso de entrega recepción, en la administración del gobierno del estado de Durango, desde la entrega de una unidad administrativa, hasta secretarias o direcciones gubernamentales, para poder facilitar este proceso a los servidores públicos y generarlo en un menor tiempo ya que cuenta con roles configurables para cada usuario que ingrese al sistema, así mismo cuenta con servicio de correo electrónico para que cada cambio se notifique al o los usuarios involucrados en cada proceso.',
+      projectName: 'Sistema de Entrega Recepción Estatal (SERE)',
+      projectDescription: 'Sistema digitalizado para procesos de entrega-recepción gubernamental. Roles configurables, notificaciones automáticas por email, gestión de unidades administrativas, secretarías y direcciones.',
       isProjectLinkPresent: false,
-      projectLiveLink: 'https://your-horrorscope.netlify.app/',
+      projectLiveLink: '',
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
       freelance: false,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'TypeScript', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'Oracle', logo: '' } ]
-
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'TypeScript', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'Oracle', logo: '' }
+      ]
     },
     {
       projectImg: 'clothingStoreImg.png',
       projectName: 'API Durango-Digital',
-      projectDescription: 'API Rest. Para el consumo de peticiones HTTP, para la creacion, gestios y cobro de tramites vehiculares, registro civil, impuesto predial y declaraciones mensuales, trimestrales o anuales.',
-      isProjectLinkPresent: false,
+      projectDescription: 'API REST robusta para servicios gubernamentales digitales. Gestión de trámites vehiculares, registro civil, impuesto predial y declaraciones fiscales. Integración con múltiples sistemas.',
+      isProjectLinkPresent: true,
       projectLiveLink: 'https://www.pagos.durango.gob.mx/',
       isProjectGithubLinkPresent: false,
       projectGithubLink: undefined,
       isOpenSource: false,
       freelance: false,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' } ]
-
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'Oracle', logo: '' }
+      ]
     },
     {
       projectImg: 'rub-inicio.png',
-      projectName: 'Registro Unico de Beneficiarios (RUB)',
-      projectDescription: 'Sistema para la creacion, supervision y gestion de solicitudes de la poblacion en general de los municipios.',
+      projectName: 'Registro Único de Beneficiarios (RUB)',
+      projectDescription: 'Sistema municipal para gestión de beneficiarios. Creación, supervisión y gestión de solicitudes ciudadanas. Interfaz intuitiva y procesos automatizados para mayor eficiencia.',
       isProjectLinkPresent: true,
       projectLiveLink: 'https://rub.municipiodurango.gob.mx/sign-in?redirectURL=%2Finicio',
       isProjectGithubLinkPresent: false,
@@ -85,12 +109,19 @@ export class ProjectsSectionComponent implements OnInit {
       isOpenSource: false,
       freelance: true,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'PostgreSQL', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'TypeScript', logo: '' }
+      ]
     },
     {
       projectImg: 'licco-inicio.png',
-      projectName: 'Licencias de Construccion (LICCO)',
-      projectDescription: 'Sistema para la creacion, revision, inspeccion, pago y cancelacion de licencias para la construccion, uso de suelo y numeros oficiales.',
+      projectName: 'Licencias de Construcción (LICCO)',
+      projectDescription: 'Plataforma digital para trámites de construcción. Gestión completa de licencias, uso de suelo, números oficiales. Incluye módulos de revisión, inspección y pagos en línea.',
       isProjectLinkPresent: true,
       projectLiveLink: 'https://desarrollourbanodigital.municipiodurango.gob.mx/#/login',
       isProjectGithubLinkPresent: false,
@@ -98,12 +129,19 @@ export class ProjectsSectionComponent implements OnInit {
       isOpenSource: false,
       freelance: true,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'PostgreSQL', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'TypeScript', logo: '' }
+      ]
     },
     {
       projectImg: 'licco-inicio.png',
-      projectName: 'Sistema de  (SDARE)',
-      projectDescription: 'Sistema para la alta de empresas para su revision, inspeccion, pago, cancelacion en los ambitos de Fomento Economico, Salud, Proteccion Civil.',
+      projectName: 'Sistema de Apertura Rápida de Empresas (SDARE)',
+      projectDescription: 'Sistema integral para registro empresarial. Gestión de empresas en ámbitos de Fomento Económico, Salud y Protección Civil. Procesos de alta, revisión, inspección y seguimiento automatizados.',
       isProjectLinkPresent: false,
       projectLiveLink: '',
       isProjectGithubLinkPresent: false,
@@ -111,7 +149,14 @@ export class ProjectsSectionComponent implements OnInit {
       isOpenSource: false,
       freelance: true,
       arquitectura: Arquitectura.MONO,
-      tecnologias: [ { nombre: 'Java', logo: '' }, { nombre: 'Spring Boot', logo: '' }, { nombre: 'Hibernate', logo: '' }, { nombre: 'PostgreSQL', logo: '' }, { nombre: 'Angular', logo: '' }, { nombre: 'TypeScript', logo: '' } ]
+      tecnologias: [
+        { nombre: 'Java', logo: '' },
+        { nombre: 'Spring Boot', logo: '' },
+        { nombre: 'Hibernate', logo: '' },
+        { nombre: 'PostgreSQL', logo: '' },
+        { nombre: 'Angular', logo: '' },
+        { nombre: 'TypeScript', logo: '' }
+      ]
     }
   ]
   constructor() { }
