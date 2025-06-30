@@ -1,60 +1,74 @@
-<div  class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
+<div class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
 
   <div class="w-full flex flex-col space-y-1 justify-center items-start">
     <app-sub-heading subHeadingText="Con lo que trabajo."></app-sub-heading>
     <app-heading [bgColor]="colors" headingText="Tecnologias y Skills"></app-heading>
   </div>
 
+  <!-- Filtros por categoría -->
+  <div class="w-full flex flex-wrap justify-center gap-3 mb-8">
+    <button
+      *ngFor="let category of categories"
+      (click)="filterByCategory(category)"
+      [class.bg-indigo-600]="selectedCategory === category"
+      [class.text-white]="selectedCategory === category"
+      [class.bg-gray-700]="selectedCategory !== category"
+      [class.text-gray-300]="selectedCategory !== category"
+      class="px-4 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-all duration-300 capitalize"
+    >
+      {{ category }}
+    </button>
+  </div>
+
   <div #techUsed [@staggerFade]="inView ? 'open' : 'close'"
-    class="w-full h-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 py-5 md:py-20">
+    class="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 py-5 md:py-10">
 
-      <a href="https://angular.dev/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="ANGULAR" [iconSize]="sizeXXL"></app-icon>
-      </a>
+    <div
+      *ngFor="let tech of filteredTechnologies; trackBy: trackByTechnology"
+      class="group eachStaggerComponent"
+    >
+      <div class="flex flex-col items-center justify-center p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
+        <!-- Icono -->
+        <div class="mb-3 group-hover:scale-110 transition-transform duration-300">
+          <app-icon [iconType]="tech.iconType" [iconSize]="sizeXXL" class="text-gray-400 group-hover:text-white"></app-icon>
+        </div>
 
-      <a href="https://www.typescriptlang.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="TYPESCRIPT" [iconSize]="sizeXXL"></app-icon>
-      </a>
+        <!-- Nombre de la tecnología -->
+        <h3 class="text-sm font-medium text-gray-300 group-hover:text-white text-center mb-2">
+          {{ tech.nombre }}
+        </h3>
 
-      <a href="https://spring.io/projects/spring-boot" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="SPRING_BOOT" [iconSize]="sizeXXL"></app-icon>
-      </a>
+        <!-- Barra de proficiencia -->
+        <div class="w-full bg-gray-600 rounded-full h-1.5 mb-1">
+          <div
+            class="bg-gradient-to-r from-indigo-500 to-purple-500 h-1.5 rounded-full transition-all duration-500"
+            [style.width.%]="tech.proficiency"
+          ></div>
+        </div>
 
-      <a href="https://www.java.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="JAVA" [iconSize]="sizeXXL"></app-icon>
-      </a>
+        <!-- Porcentaje -->
+        <span class="text-xs text-gray-400 group-hover:text-gray-300">
+          {{ tech.proficiency }}%
+        </span>
 
-      <a href="https://tailwindcss.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="TAILWINDCSS" [iconSize]="sizeXXL"></app-icon>
-      </a>
+        <!-- Badge de categoría -->
+        <span class="mt-2 px-2 py-1 text-xs rounded-full"
+              [ngClass]="{
+                'bg-blue-500/20 text-blue-300': tech.categoria === 'Frontend',
+                'bg-green-500/20 text-green-300': tech.categoria === 'Backend',
+                'bg-yellow-500/20 text-yellow-300': tech.categoria === 'Database',
+                'bg-purple-500/20 text-purple-300': tech.categoria === 'Tools',
+                'bg-orange-500/20 text-orange-300': tech.categoria === 'Cloud'
+              }">
+          {{ tech.categoria }}
+        </span>
 
-      <a href="https://nodejs.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="NODEJS" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://www.oracle.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="ORACLE" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://www.postgresql.org/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="POSTGRESQL" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://www.mongodb.com/es" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="MONGODB" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://aws.amazon.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="AWS" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://git-scm.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="GIT" [iconSize]="sizeXXL"></app-icon>
-      </a>
-
-      <a href="https://www.docker.com/" target="_blank" class="text-gray-600 eachStaggerComponent flex justify-center">
-        <app-icon iconType="DOCKER" [iconSize]="sizeXXL"></app-icon>
-      </a>
+        <!-- Años de experiencia -->
+        <span class="mt-1 text-xs text-gray-500">
+          {{ tech.yearsExperience }} años
+        </span>
+      </div>
+    </div>
 
   </div>
 </div>

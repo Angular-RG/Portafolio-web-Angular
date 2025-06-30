@@ -159,6 +159,74 @@ export class ProjectsSectionComponent implements OnInit {
       ]
     }
   ]
+
+  // Filtros y categorías
+  categories = ['Todos', 'Gobierno Digital', 'Sistemas Municipales', 'APIs'];
+  selectedCategory = 'Todos';
+  searchTerm = '';
+
+  get filteredProjects(): Array<ProjectCards> {
+    let filtered = this.projects;
+
+    // Filtrar por categoría
+    if (this.selectedCategory !== 'Todos') {
+      filtered = filtered.filter(project => {
+        if (this.selectedCategory === 'Gobierno Digital') {
+          return !project.freelance;
+        } else if (this.selectedCategory === 'Sistemas Municipales') {
+          return project.freelance;
+        } else if (this.selectedCategory === 'APIs') {
+          return project.projectName?.toLowerCase().includes('api');
+        }
+        return true;
+      });
+    }
+
+    // Filtrar por término de búsqueda
+    if (this.searchTerm) {
+      const term = this.searchTerm.toLowerCase();
+      filtered = filtered.filter(project =>
+        project.projectName?.toLowerCase().includes(term) ||
+        project.projectDescription?.toLowerCase().includes(term) ||
+        project.tecnologias?.some(tech => tech.nombre.toLowerCase().includes(term))
+      );
+    }
+
+    return filtered;
+  }
+
+  filterByCategory(category: string): void {
+    this.selectedCategory = category;
+  }
+
+  onSearchChange(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.searchTerm = target.value;
+  }
+
+  trackByProject(index: number, project: ProjectCards): string | undefined {
+    return project.projectName;
+  }
+
+  trackByTech(index: number, tech: any): string {
+    return tech.nombre;
+  }
+
+  getTechBadgeColor(tech: string): string {
+    const techColors: { [key: string]: string } = {
+      'Java': 'bg-orange-500/20 text-orange-300',
+      'Angular': 'bg-red-500/20 text-red-300',
+      'Spring Boot': 'bg-green-500/20 text-green-300',
+      'TypeScript': 'bg-blue-500/20 text-blue-300',
+      'Oracle': 'bg-red-600/20 text-red-400',
+      'PostgreSQL': 'bg-blue-600/20 text-blue-400',
+      'AWS': 'bg-yellow-500/20 text-yellow-300',
+      'Hibernate': 'bg-purple-500/20 text-purple-300',
+      'Docker': 'bg-cyan-500/20 text-cyan-300'
+    };
+    return techColors[tech] || 'bg-gray-500/20 text-gray-300';
+  }
+
   constructor() { }
 
   ngOnInit(): void {

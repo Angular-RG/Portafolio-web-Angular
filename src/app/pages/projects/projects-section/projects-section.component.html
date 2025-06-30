@@ -5,6 +5,149 @@
     <app-heading [bgColor]="colors" headingText="Proyectos"></app-heading>
   </div>
 
-  <app-project-card [@fadeInView]="inViewList[i] ? 'open' : 'close'" class="w-full eachStaggerComponent" *ngFor=" let project of projects; let i = index;" [project]="project"></app-project-card>
+  <!-- Barra de búsqueda -->
+  <div class="w-full max-w-md mx-auto mb-6">
+    <div class="relative">
+      <input
+        type="text"
+        placeholder="Buscar proyectos..."
+        (input)="onSearchChange($event)"
+        class="w-full px-4 py-3 pl-12 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+      >
+      <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+    </div>
+  </div>
+
+  <!-- Filtros por categoría -->
+  <div class="w-full flex flex-wrap justify-center gap-3 mb-8">
+    <button
+      *ngFor="let category of categories"
+      (click)="filterByCategory(category)"
+      [class.bg-indigo-600]="selectedCategory === category"
+      [class.text-white]="selectedCategory === category"
+      [class.bg-gray-700]="selectedCategory !== category"
+      [class.text-gray-300]="selectedCategory !== category"
+      class="px-4 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-all duration-300"
+    >
+      {{ category }}
+    </button>
+  </div>
+
+  <!-- Contador de proyectos -->
+  <div class="text-center mb-6">
+    <span class="text-gray-400 text-sm">
+      Mostrando {{ filteredProjects.length }} de {{ projects.length }} proyectos
+    </span>
+  </div>
+
+  <!-- Grid de proyectos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      *ngFor="let project of filteredProjects; trackBy: trackByProject; let i = index"
+      class="group bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 eachStaggerComponent"
+    >
+
+      <!-- Imagen del proyecto -->
+      <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 overflow-hidden">
+        <img
+          [src]="'assets/images/' + project.projectImg"
+          [alt]="project.projectName"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+        >
+
+        <!-- Overlay con información -->
+        <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div class="text-center">
+            <!-- Badges de estado -->
+            <div class="flex flex-wrap gap-2 justify-center mb-3">
+              <span
+                *ngIf="project.freelance"
+                class="px-2 py-1 bg-green-500 text-white text-xs rounded-full"
+              >
+                Freelance
+              </span>
+              <span
+                *ngIf="!project.freelance"
+                class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full"
+              >
+                Gobierno
+              </span>
+              <span
+                class="px-2 py-1 bg-purple-500 text-white text-xs rounded-full"
+              >
+                {{ project.arquitectura }}
+              </span>
+            </div>
+
+            <!-- Enlaces -->
+            <div class="flex gap-3 justify-center">
+              <a
+                *ngIf="project.isProjectLinkPresent && project.projectLiveLink"
+                [href]="project.projectLiveLink"
+                target="_blank"
+                class="bg-white text-gray-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
+              >
+                <i class="fas fa-external-link-alt mr-2"></i>Ver Proyecto
+              </a>
+              <button
+                *ngIf="!project.isProjectLinkPresent"
+                class="bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
+                disabled
+              >
+                <i class="fas fa-lock mr-2"></i>Privado
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido del proyecto -->
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors duration-300">
+          {{ project.projectName }}
+        </h3>
+
+        <p class="text-gray-300 text-sm mb-4 line-clamp-3 leading-relaxed">
+          {{ project.projectDescription }}
+        </p>
+
+        <!-- Tecnologías -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            *ngFor="let tech of project.tecnologias; trackBy: trackByTech"
+            [class]="getTechBadgeColor(tech.nombre)"
+            class="px-2 py-1 rounded-full text-xs font-medium"
+          >
+            {{ tech.nombre }}
+          </span>
+        </div>
+
+        <!-- Footer con información adicional -->
+        <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+          <div class="flex items-center text-xs text-gray-400">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <span>{{ project.freelance ? 'Freelance' : 'Gobierno' }}</span>
+          </div>
+
+          <div class="flex items-center text-xs text-gray-400">
+            <i class="fas fa-code mr-2"></i>
+            <span>{{ project.tecnologias?.length }} tecnologías</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mensaje cuando no hay resultados -->
+  <div
+    *ngIf="filteredProjects.length === 0"
+    class="text-center py-12"
+  >
+    <i class="fas fa-search text-gray-400 text-4xl mb-4"></i>
+    <h3 class="text-xl font-semibold text-gray-300 mb-2">No se encontraron proyectos</h3>
+    <p class="text-gray-400">Intenta con otros términos de búsqueda o categorías</p>
+  </div>
 
 </div>

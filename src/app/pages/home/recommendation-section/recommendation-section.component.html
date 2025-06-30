@@ -1,13 +1,96 @@
-<div class="w-full h-full md:w-screen md:h-screen bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
+<div class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
 
-    <div class="w-full flex flex-col space-y-1 justify-center items-start">
-      <app-sub-heading subHeadingText="Lo que dicen de mi."></app-sub-heading>
-      <app-heading [bgColor]="colors" headingText="Recomendaciones"></app-heading>
-    </div>
-  
-    <div #recommSec  [@staggerFade]="inView ? 'open' : 'close'" class="w-full px-3 h-full space-y-5 md:space-y-0 md:space-x-10 flex flex-col md:flex-row justify-center items-center">
-      <app-testimonial-card class="eachStaggerComponent  flex-1 h-full" *ngFor="let testimonial of testimonialDataList; trackBy:trackByFeedbackBy"
-        [testimonialData]="testimonial"></app-testimonial-card>
-    </div>
+  <div class="w-full flex flex-col space-y-1 justify-center items-start">
+    <app-sub-heading subHeadingText="Lo que dicen de mi."></app-sub-heading>
+    <app-heading [bgColor]="colors" headingText="Recomendaciones"></app-heading>
   </div>
-  
+
+  <!-- Filtro para testimonios destacados -->
+  <div class="w-full flex justify-center mb-6">
+    <button
+      (click)="toggleFeatured()"
+      [class.bg-indigo-600]="showFeaturedOnly"
+      [class.bg-gray-700]="!showFeaturedOnly"
+      class="px-6 py-2 rounded-full text-white font-medium hover:bg-indigo-500 transition-all duration-300"
+    >
+      {{ showFeaturedOnly ? 'Ver Todas' : 'Solo Destacadas' }}
+    </button>
+  </div>
+
+  <div #recommSec [@staggerFade]="inView ? 'open' : 'close'"
+       class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div
+      *ngFor="let testimonial of filteredTestimonials; trackBy: trackByTestimonial"
+      class="eachStaggerComponent bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+      [class.ring-2]="testimonial.featured"
+      [class.ring-yellow-400]="testimonial.featured"
+      [class.bg-gradient-to-br]="testimonial.featured"
+      [class.from-gray-800]="testimonial.featured"
+      [class.to-gray-700]="testimonial.featured"
+    >
+
+      <!-- Badge de destacado -->
+      <div class="flex justify-between items-start mb-4">
+        <div class="flex">
+          <!-- Rating con estrellas -->
+          <div class="flex">
+            <i
+              *ngFor="let star of getStars(testimonial.rating)"
+              class="fas fa-star text-yellow-400 text-sm"
+            ></i>
+            <i
+              *ngFor="let star of getEmptyStars(testimonial.rating)"
+              class="far fa-star text-gray-500 text-sm"
+            ></i>
+          </div>
+        </div>
+
+        <span
+          *ngIf="testimonial.featured"
+          class="bg-yellow-400 text-gray-900 px-2 py-1 rounded-full text-xs font-bold"
+        >
+          ⭐ Destacado
+        </span>
+      </div>
+
+      <!-- Contenido del testimonio -->
+      <blockquote class="text-gray-300 mb-6 italic text-sm leading-relaxed">
+        "{{ testimonial.content }}"
+      </blockquote>
+
+      <!-- Información del autor -->
+      <div class="flex items-center">
+        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+          <span class="text-white font-bold text-lg">
+            {{ testimonial.name.charAt(0) }}{{ getSecondInitial(testimonial.name) }}
+          </span>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-semibold text-white text-sm">{{ testimonial.name }}</h4>
+          <p class="text-gray-400 text-xs">{{ testimonial.position }}</p>
+          <p class="text-indigo-400 text-xs font-medium">{{ testimonial.company }}</p>
+        </div>
+
+        <!-- Enlace a LinkedIn -->
+        <a
+          *ngIf="testimonial.linkedInUrl && testimonial.linkedInUrl !== '#'"
+          [href]="testimonial.linkedInUrl"
+          target="_blank"
+          class="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+        >
+          <i class="fab fa-linkedin text-lg"></i>
+        </a>
+      </div>
+
+      <!-- Fecha del testimonio -->
+      <div class="mt-4 pt-4 border-t border-gray-700">
+        <span class="text-gray-500 text-xs">
+          {{ testimonial.date | date:'MMM yyyy' }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
