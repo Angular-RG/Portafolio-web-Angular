@@ -1,4 +1,15 @@
-# PortafolioWebAngular
+# Portafolio Web Angular
+
+Este proyecto es una aplicación de portafolio web desarrollada con Angular 16. Actualmente en desarrollo inicial.
+
+> **Estado Actual**: La aplicación muestra la plantilla por defecto de Angular. Ver [ANALISIS.md](./ANALISIS.md) para un análisis completo del estado actual y recomendaciones de mejora.
+
+## 📋 Estado del Proyecto
+- ✅ Configuración base de Angular 16
+- ✅ Tailwind CSS configurado y actualizado
+- ✅ Estructura de build funcional
+- ✅ Tests unitarios pasando
+- 🔄 **En desarrollo**: Transformación a portafolio real
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 
