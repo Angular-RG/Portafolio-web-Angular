@@ -1,8 +1,8 @@
 <div class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
 
   <div class="w-full flex flex-col space-y-1 justify-center items-start">
-    <app-sub-heading subHeadingText="Con lo que trabajo."></app-sub-heading>
-    <app-heading [bgColor]="colors" headingText="Tecnologias y Skills"></app-heading>
+    <app-sub-heading [subHeadingText]="'HOME.TECHNOLOGIES.SUBHEADING' | translate"></app-sub-heading>
+    <app-heading [bgColor]="colors" [headingText]="'HOME.TECHNOLOGIES.HEADING' | translate"></app-heading>
   </div>
 
   <!-- Filtros por categoría -->
@@ -16,7 +16,7 @@
       [class.text-gray-300]="selectedCategory !== category"
       class="px-4 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-all duration-300 capitalize"
     >
-      {{ category }}
+      {{ getCategoryTranslationKey(category) | translate }}
     </button>
   </div>
 
@@ -60,12 +60,12 @@
                 'bg-purple-500/20 text-purple-300': tech.categoria === 'Tools',
                 'bg-orange-500/20 text-orange-300': tech.categoria === 'Cloud'
               }">
-          {{ tech.categoria }}
+          {{ getCategoryTranslationKey(tech.categoria) | translate }}
         </span>
 
         <!-- Años de experiencia -->
         <span class="mt-1 text-xs text-gray-500">
-          {{ tech.yearsExperience }} años
+          {{ tech.yearsExperience }} {{ 'HOME.TECHNOLOGIES.YEARS' | translate }}
         </span>
       </div>
     </div>

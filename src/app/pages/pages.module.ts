@@ -4,6 +4,7 @@ import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ProjectsModule } from './projects/projects.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { ProjectsModule } from './projects/projects.module';
     PagesRoutingModule,
     HomeModule,
     AboutModule,
-    ProjectsModule
+    ProjectsModule,
+    TranslateModule
   ]
 })
 export class PagesModule { }

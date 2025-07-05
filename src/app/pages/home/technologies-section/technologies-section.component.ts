@@ -264,8 +264,8 @@ export class TechnologiesSectionComponent {
   ];
 
   // Filtros por categoría y configuración UX/UI
-  categories = ['Todas', 'Frontend', 'Backend', 'Database', 'Cloud', 'Tools'];
-  selectedCategory = 'Todas';
+  categories = ['All', 'Frontend', 'Backend', 'Database', 'Cloud', 'Tools'];
+  selectedCategory = 'All';
 
   // Vista por defecto: solo tecnologías destacadas para mejor UX
   showOnlyFeatured = true;
@@ -278,7 +278,7 @@ export class TechnologiesSectionComponent {
     let filtered = this.technologies;
 
     // Filtrar por categoría
-    if (this.selectedCategory !== 'Todas') {
+    if (this.selectedCategory !== 'All') {
       filtered = filtered.filter(tech => tech.categoria === this.selectedCategory);
     }
 
@@ -308,7 +308,7 @@ export class TechnologiesSectionComponent {
   get categoryCount(): { [key: string]: number } {
     const count: { [key: string]: number } = {};
     this.categories.forEach(category => {
-      if (category === 'Todas') {
+      if (category === 'All') {
         count[category] = this.showOnlyFeatured
           ? this.technologies.filter(t => t.featured).length
           : this.technologies.length;
@@ -368,6 +368,23 @@ export class TechnologiesSectionComponent {
 
   trackByTechnology(index: number, tech: Technology): number {
     return tech.id;
+  }
+
+  getCategoryTranslationKey(category: string): string {
+    if (category.toLowerCase() === 'all') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_ALL';
+    } else if (category === 'Frontend') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_FRONTEND';
+    } else if (category === 'Backend') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_BACKEND';
+    } else if (category === 'Database') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_DATABASE';
+    } else if (category === 'Tools') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_TOOLS';
+    } else if (category === 'Cloud') {
+      return 'HOME.TECHNOLOGIES.CATEGORY_CLOUD';
+    }
+    return category;
   }
 
   @HostListener('window:scroll')

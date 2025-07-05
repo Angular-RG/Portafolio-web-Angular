@@ -6,13 +6,13 @@
 
     <div class="w-full flex flex-col justify-between items-center">
         <span class=" w-full text-gray-600 font-bold text-xl md:text-3xl text-left">
-            {{dataState.headingText}}
+            {{dataState.headingText | translate}}
         </span>
 
         <span class="w-full text-gray-400 font-medium text-sm md:text-xl py-3 pr-10 text-left leading-relaxed">
-            <span class="text-gray-500">{{dataState.subHeadingText}}</span>
-            {{dataState.descriptionText}}
+            <span class="text-gray-500">{{dataState.subHeadingText | translate}}</span>
+            {{dataState.descriptionText | translate}}
         </span>
     </div>
-    
+
 </div>

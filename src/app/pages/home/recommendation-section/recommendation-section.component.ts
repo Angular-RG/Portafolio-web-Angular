@@ -1,14 +1,15 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { staggerFade } from 'src/app/animations/animations';
 import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Testimonial {
   id: number;
   carrer?: string;
-  name: string;
-  position: string;
-  company: string;
-  content: string;
+  nameKey: string;
+  positionKey: string;
+  companyKey: string;
+  contentKey: string;
   image: string;
   rating: number;
   featured: boolean;
@@ -34,10 +35,10 @@ export class RecommendationSectionComponent implements OnInit {
     {
       id: 1,
       carrer: 'I.S.C.',
-      name: 'Luis Angel Flores',
-      position: 'Angular Developer',
-      company: 'CETIC - Gobierno de Durango',
-      content: 'Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes.',
+      nameKey: 'TESTIMONIALS.T1.NAME',
+      positionKey: 'TESTIMONIALS.T1.POSITION',
+      companyKey: 'TESTIMONIALS.T1.COMPANY',
+      contentKey: 'TESTIMONIALS.T1.CONTENT',
       image: 'assets/images/testimonial-1.jpg',
       rating: 5,
       featured: true,
@@ -47,10 +48,10 @@ export class RecommendationSectionComponent implements OnInit {
     {
       id: 2,
       carrer: 'M.E.A.',
-      name: 'Antonio Vazquez',
-      position: 'Lider del área de desarrollo',
-      company: 'CETIC - Gobierno de Durango',
-      content: 'Héctor es un desarrollador excepcional con gran capacidad de análisis y resolución de problemas complejos. Su experiencia en sistemas gubernamentales y su dominio del stack Java-Angular lo convierten en un activo valioso para cualquier equipo.',
+      nameKey: 'TESTIMONIALS.T2.NAME',
+      positionKey: 'TESTIMONIALS.T2.POSITION',
+      companyKey: 'TESTIMONIALS.T2.COMPANY',
+      contentKey: 'TESTIMONIALS.T2.CONTENT',
       image: 'assets/images/testimonial-2.jpg',
       rating: 5,
       featured: false,
@@ -59,10 +60,10 @@ export class RecommendationSectionComponent implements OnInit {
     },
     {
       id: 3,
-      name: 'Carlos Rodríguez',
-      position: 'Tech Lead',
-      company: 'Freelance Projects',
-      content: 'Trabajar con Héctor ha sido una experiencia excelente. Su conocimiento técnico en Spring Boot y Angular, combinado con su capacidad para entregar proyectos en tiempo y forma, lo destacan como un desarrollador senior confiable.',
+      nameKey: 'TESTIMONIALS.T3.NAME',
+      positionKey: 'TESTIMONIALS.T3.POSITION',
+      companyKey: 'TESTIMONIALS.T3.COMPANY',
+      contentKey: 'TESTIMONIALS.T3.CONTENT',
       image: 'assets/images/testimonial-3.jpg',
       rating: 5,
       featured: true,
@@ -71,10 +72,10 @@ export class RecommendationSectionComponent implements OnInit {
     },
     {
       id: 4,
-      name: 'Ana Martínez',
-      position: 'Systems Architect',
-      company: 'Municipio de Durango',
-      content: 'La arquitectura de microservicios implementada por Héctor en nuestros sistemas municipales ha mejorado significativamente el rendimiento y la escalabilidad. Su visión técnica y capacidad de liderazgo son excepcionales.',
+      nameKey: 'TESTIMONIALS.T4.NAME',
+      positionKey: 'TESTIMONIALS.T4.POSITION',
+      companyKey: 'TESTIMONIALS.T4.COMPANY',
+      contentKey: 'TESTIMONIALS.T4.CONTENT',
       image: 'assets/images/testimonial-4.jpg',
       rating: 5,
       featured: false,
@@ -117,7 +118,7 @@ export class RecommendationSectionComponent implements OnInit {
     return '';
   }
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
   }
@@ -129,6 +130,4 @@ export class RecommendationSectionComponent implements OnInit {
       this.inView = true;
     }
   }
-
-
 }

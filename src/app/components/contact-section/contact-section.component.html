@@ -1,15 +1,14 @@
 <div id="contact" class="w-full h-full bg-gray-800 flex flex-col px-3 py-5 space-y-20 md:space-y-10 md:p-16">
 
   <div class="w-full flex flex-col space-y-1 justify-center items-start">
-    <app-sub-heading subHeadingText="Qué tienes en mente"></app-sub-heading>
-    <app-heading [bgColor]="colors" headingText="Contactame"></app-heading>
+    <app-sub-heading [subHeadingText]="'CONTACT.SUBHEADING' | translate"></app-sub-heading>
+    <app-heading [bgColor]="colors" [headingText]="'CONTACT.HEADING' | translate"></app-heading>
   </div>
 
   <div class="w-full h-full space-y-4 flex flex-col justify-center items-center">
 
     <div class="w-full flex text-gray-400 text-xl font-medium">
-      Emocionado de trabajar juntos en algo. Siempre estoy abierto a oportunidades para aprender algo nuevo todos los días.
-       ¡Conectémonos!
+      {{ 'CONTACT.DESCRIPTION' | translate }}
     </div>
 
     <div class="bg-gray-900 text-gray-400 rounded-lg flex justify-between items-center">
@@ -33,10 +32,6 @@
         <app-icon class="text-white" iconType="GITLAB" [iconSize]="sizeXL"></app-icon>
       </a>
 
-      <!-- <a href="https://dribbble.com/harsh07bharvada" target="_blank" >
-        <app-icon class="text-white" iconType="DRIBBBLE" [iconSize]="sizeXL"></app-icon>
-      </a> -->
-
       <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" >
         <app-icon class="text-white" iconType="LINKEDIN" [iconSize]="sizeXL"></app-icon>
       </a>
@@ -44,14 +39,6 @@
       <a href="https://twitter.com/adriianroman" target="_blank" >
         <app-icon class="text-white" iconType="TWITTER" [iconSize]="sizeXL"></app-icon>
       </a>
-
-      <!-- <a href="https://www.hackerrank.com/harsh07" target="_blank" >
-        <app-icon class="text-white" iconType="HACKERRANK" [iconSize]="sizeXL"></app-icon>
-      </a>
-
-      <a href="https://leetcode.com/harsh07bharvada/" target="_blank" >
-        <app-icon class="text-white" iconType="LEETCODE" [iconSize]="sizeXL"></app-icon>
-      </a> -->
 
     </div>
   </div>

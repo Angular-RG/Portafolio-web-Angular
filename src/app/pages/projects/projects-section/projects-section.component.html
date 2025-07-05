@@ -1,8 +1,8 @@
 <div class="w-full h-full flex flex-col space-y-8 p-5 md:px-16">
 
   <div class="w-full flex flex-col py-8 justify-center items-start">
-    <app-sub-heading subHeadingText="Proyectos en los que he trabajado"></app-sub-heading>
-    <app-heading [bgColor]="colors" headingText="Proyectos"></app-heading>
+    <app-sub-heading [subHeadingText]="'PROJECTS.SUBHEADING' | translate"></app-sub-heading>
+    <app-heading [bgColor]="colors" [headingText]="'PROJECTS.HEADING' | translate"></app-heading>
   </div>
 
   <!-- Barra de búsqueda -->
@@ -10,7 +10,7 @@
     <div class="relative">
       <input
         type="text"
-        placeholder="Buscar proyectos..."
+        [placeholder]="'PROJECTS.SEARCH' | translate"
         (input)="onSearchChange($event)"
         class="w-full px-4 py-3 pl-12 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
       >
@@ -29,14 +29,14 @@
       [class.text-gray-300]="selectedCategory !== category"
       class="px-4 py-2 rounded-full text-sm font-medium hover:bg-indigo-500 hover:text-white transition-all duration-300"
     >
-      {{ category }}
+      {{ getCategoryTranslationKey(category) | translate }}
     </button>
   </div>
 
   <!-- Contador de proyectos -->
   <div class="text-center mb-6">
     <span class="text-gray-400 text-sm">
-      Mostrando {{ filteredProjects.length }} de {{ projects.length }} proyectos
+      {{ 'PROJECTS.SHOWING' | translate }} {{ filteredProjects.length }} {{ 'PROJECTS.OF' | translate }} {{ projects.length }} {{ 'PROJECTS.PROJECTS' | translate }}
     </span>
   </div>
 
@@ -65,13 +65,13 @@
                 *ngIf="project.freelance"
                 class="px-2 py-1 bg-green-500 text-white text-xs rounded-full"
               >
-                Freelance
+                {{ 'PROJECTS.FREELANCE' | translate }}
               </span>
               <span
                 *ngIf="!project.freelance"
                 class="px-2 py-1 bg-blue-500 text-white text-xs rounded-full"
               >
-                Gobierno
+                {{ 'PROJECTS.GOVERNMENT' | translate }}
               </span>
               <span
                 class="px-2 py-1 bg-purple-500 text-white text-xs rounded-full"
@@ -88,14 +88,14 @@
                 target="_blank"
                 class="bg-white text-gray-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors duration-300"
               >
-                <i class="fas fa-external-link-alt mr-2"></i>Ver Proyecto
+                <i class="fas fa-external-link-alt mr-2"></i>{{ 'PROJECTS.VIEW_PROJECT' | translate }}
               </a>
               <button
                 *ngIf="!project.isProjectLinkPresent"
                 class="bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
                 disabled
               >
-                <i class="fas fa-lock mr-2"></i>Privado
+                <i class="fas fa-lock mr-2"></i>{{ 'PROJECTS.PRIVATE' | translate }}
               </button>
             </div>
           </div>

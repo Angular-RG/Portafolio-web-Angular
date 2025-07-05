@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -12,7 +13,8 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ],
   exports:[
     ContactSectionComponent,

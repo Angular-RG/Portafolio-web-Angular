@@ -10,7 +10,7 @@ import { addClassToObject } from "../../util/config.util";
   styleUrls: ['./custom-button.component.scss']
 })
 export class CustomButtonComponent {
-  
+
   /** INPUT FROM PARENT COMPONENT */
   @Input() btnLabel: string = 'Click Me..';
   @Input() isIconOnly: boolean = false;

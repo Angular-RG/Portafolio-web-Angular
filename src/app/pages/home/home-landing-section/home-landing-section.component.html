@@ -14,15 +14,12 @@
 
     <div
       class="flex w-full text-gray-400 md:pr-20 font-base text-lg md:text-2xl justify-center md:justify-start items-center">
-      <span @slideInFromRightAndFade class="text-center md:text-left">
-        Impulso la transformación digital de empresas y gobiernos, creando <span class="text-primary font-semibold">soluciones web robustas y escalables</span> con tecnologías modernas como <strong>Angular</strong>, <strong>Spring Boot</strong>, <strong>Oracle</strong> y <strong>PostgreSQL</strong>.<br>
-        <span class="block mt-2">Más de 3 años desarrollando sistemas de alto impacto y eficiencia.</span>
-      </span>
+      <span @slideInFromRightAndFade class="text-center md:text-left" [innerHTML]="'HOME.DESCRIPTION' | translate"></span>
     </div>
 
     <div class="flex w-full justify-center md:justify-start  items-center">
       <app-custom-button @slideInFromRightAndFade (onBtnClicked)="goToDevProcess($event)" [size]="size" [bgColor]="color"
-        btnLabel="Iniciemos" [isIconActive]="true" iconType="RIGHT_ARROW" [iconSize]="iconSize"
+        [btnLabel]="'HOME.BUTTON' | translate" [isIconActive]="true" iconType="RIGHT_ARROW" [iconSize]="iconSize"
         iconAnimation="animate-bounceX">
       </app-custom-button>
     </div>

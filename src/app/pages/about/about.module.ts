@@ -4,6 +4,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { AboutRoutingModule } from './about-routing.module';
 import { ComponentsModule } from '../../components/components.module';
 import { AboutSectionComponent } from './about-section/about-section.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { AboutSectionComponent } from './about-section/about-section.component';
     CommonModule,
     AboutRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    TranslateModule
   ]
 })
 export class AboutModule { }

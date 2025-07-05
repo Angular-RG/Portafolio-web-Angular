@@ -1,8 +1,8 @@
 <div class="w-full h-full bg-gray-900 flex flex-col p-3 space-y-10 md:p-16">
 
   <div class="w-full flex flex-col space-y-1 justify-center items-start">
-    <app-sub-heading subHeadingText="Lo que dicen de mi."></app-sub-heading>
-    <app-heading [bgColor]="colors" headingText="Recomendaciones"></app-heading>
+    <app-sub-heading [subHeadingText]="'HOME.RECOMMENDATIONS.SUBHEADING' | translate"></app-sub-heading>
+    <app-heading [bgColor]="colors" [headingText]="'HOME.RECOMMENDATIONS.HEADING' | translate"></app-heading>
   </div>
 
   <!-- Filtro para testimonios destacados -->
@@ -13,7 +13,7 @@
       [class.bg-gray-700]="!showFeaturedOnly"
       class="px-6 py-2 rounded-full text-white font-medium hover:bg-indigo-500 transition-all duration-300"
     >
-      {{ showFeaturedOnly ? 'Ver Todas' : 'Solo Destacadas' }}
+      {{ (showFeaturedOnly ? 'HOME.RECOMMENDATIONS.SHOW_ALL' : 'HOME.RECOMMENDATIONS.SHOW_FEATURED') | translate }}
     </button>
   </div>
 
@@ -50,26 +50,26 @@
           *ngIf="testimonial.featured"
           class="bg-yellow-400 text-gray-900 px-2 py-1 rounded-full text-xs font-bold"
         >
-          ⭐ Destacado
+          ⭐ {{ 'HOME.RECOMMENDATIONS.FEATURED' | translate }}
         </span>
       </div>
 
       <!-- Contenido del testimonio -->
       <blockquote class="text-gray-300 mb-6 italic text-sm leading-relaxed">
-        "{{ testimonial.content }}"
+        "{{ testimonial.contentKey | translate }}"
       </blockquote>
 
       <!-- Información del autor -->
       <div class="flex items-center">
         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
           <span class="text-white font-bold text-lg">
-            {{ testimonial.name.charAt(0) }}{{ getSecondInitial(testimonial.name) }}
+            {{ (testimonial.nameKey | translate).charAt(0) }}{{ getSecondInitial(testimonial.nameKey | translate) }}
           </span>
         </div>
         <div class="flex-1">
-          <h4 class="font-semibold text-white text-sm">{{ testimonial.name }}</h4>
-          <p class="text-gray-400 text-xs">{{ testimonial.position }}</p>
-          <p class="text-indigo-400 text-xs font-medium">{{ testimonial.company }}</p>
+          <h4 class="font-semibold text-white text-sm">{{ testimonial.nameKey | translate }}</h4>
+          <p class="text-gray-400 text-xs">{{ testimonial.positionKey | translate }}</p>
+          <p class="text-indigo-400 text-xs font-medium">{{ testimonial.companyKey | translate }}</p>
         </div>
 
         <!-- Enlace a LinkedIn -->

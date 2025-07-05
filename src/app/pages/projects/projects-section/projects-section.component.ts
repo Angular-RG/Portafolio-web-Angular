@@ -165,47 +165,34 @@ export class ProjectsSectionComponent implements OnInit {
   selectedCategory = 'Todos';
   searchTerm = '';
 
+  // Crear una propiedad privada para almacenar los proyectos filtrados
+  private _filteredProjects: Array<ProjectCards> = [];
+
+  // Getter para obtener los proyectos filtrados
   get filteredProjects(): Array<ProjectCards> {
-    let filtered = this.projects;
-
-    // Filtrar por categoría
-    if (this.selectedCategory !== 'Todos') {
-      filtered = filtered.filter(project => {
-        if (this.selectedCategory === 'Gobierno Digital') {
-          return !project.freelance;
-        } else if (this.selectedCategory === 'Sistemas Municipales') {
-          return project.freelance;
-        } else if (this.selectedCategory === 'APIs') {
-          return project.projectName?.toLowerCase().includes('api');
-        }
-        return true;
-      });
-    }
-
-    // Filtrar por término de búsqueda
-    if (this.searchTerm) {
-      const term = this.searchTerm.toLowerCase();
-      filtered = filtered.filter(project =>
-        project.projectName?.toLowerCase().includes(term) ||
-        project.projectDescription?.toLowerCase().includes(term) ||
-        project.tecnologias?.some(tech => tech.nombre.toLowerCase().includes(term))
-      );
-    }
-
-    return filtered;
+    return this._filteredProjects;
   }
 
   filterByCategory(category: string): void {
     this.selectedCategory = category;
+    this.applyFilters();
   }
 
   onSearchChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.searchTerm = target.value;
+    this.searchTerm = target.value.toLowerCase();
+    this.applyFilters();
   }
 
   trackByProject(index: number, project: ProjectCards): string | undefined {
     return project.projectName;
+  }
+
+  getCategoryTranslationKey(category: string): string {
+    if (category.toLowerCase() === 'all') {
+      return 'PROJECTS.CATEGORY_ALL';
+    }
+    return category;
   }
 
   trackByTech(index: number, tech: any): string {
@@ -230,7 +217,36 @@ export class ProjectsSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Inicializar los proyectos filtrados
+    this._filteredProjects = [...this.projects];
+  }
 
+  applyFilters(): void {
+    const filtered = this.projects.filter(project => {
+      // Filtro por categoría
+      let categoryMatch: boolean | undefined = true;
+
+      if (this.selectedCategory !== 'Todos') {
+        if (this.selectedCategory === 'Gobierno Digital') {
+          categoryMatch = !project.freelance;
+        } else if (this.selectedCategory === 'Sistemas Municipales') {
+          categoryMatch = project.freelance;
+        } else if (this.selectedCategory === 'APIs') {
+          categoryMatch = project.projectName?.toLowerCase().includes('api') || false;
+        }
+      }
+
+      // Filtro por búsqueda
+      const searchMatch = !this.searchTerm ||
+                         (project.projectName && project.projectName.toLowerCase().includes(this.searchTerm)) ||
+                         (project.projectDescription && project.projectDescription.toLowerCase().includes(this.searchTerm)) ||
+                         (project.tecnologias && project.tecnologias.some(tech => tech.nombre.toLowerCase().includes(this.searchTerm)));
+
+      return categoryMatch && searchMatch;
+    });
+
+    // Asignar a la propiedad privada en lugar del getter
+    this._filteredProjects = filtered;
   }
 
   @HostListener('window:scroll')
@@ -243,6 +259,4 @@ export class ProjectsSectionComponent implements OnInit {
       }
     })
   }
-
-
 }

@@ -5,6 +5,7 @@ import { ComponentsModule } from '../../components/components.module';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     CommonModule,
     ProjectsRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    TranslateModule
   ]
 })
 export class ProjectsModule { }
