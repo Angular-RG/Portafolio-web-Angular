@@ -4,6 +4,7 @@ import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
 
 interface Testimonial {
   id: number;
+  carrer?: string;
   name: string;
   position: string;
   company: string;
@@ -32,7 +33,8 @@ export class RecommendationSectionComponent implements OnInit {
   testimonials: Testimonial[] = [
     {
       id: 1,
-      name: 'Luis Angel Flores Galindo',
+      carrer: 'I.S.C.',
+      name: 'Luis Angel Flores',
       position: 'Angular Developer',
       company: 'CETIC - Gobierno de Durango',
       content: 'Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes.',
@@ -44,8 +46,9 @@ export class RecommendationSectionComponent implements OnInit {
     },
     {
       id: 2,
-      name: 'María González',
-      position: 'Project Manager',
+      carrer: 'M.E.A.',
+      name: 'Antonio Vazquez',
+      position: 'Lider del área de desarrollo',
       company: 'CETIC - Gobierno de Durango',
       content: 'Héctor es un desarrollador excepcional con gran capacidad de análisis y resolución de problemas complejos. Su experiencia en sistemas gubernamentales y su dominio del stack Java-Angular lo convierten en un activo valioso para cualquier equipo.',
       image: 'assets/images/testimonial-2.jpg',

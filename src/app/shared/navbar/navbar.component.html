@@ -1,84 +1,46 @@
-<div class="w-full p-5 md:pt-16 md:pb-5 md:px-16 flex justify-between items-center">
-  <a routerLink="" class="text-white font-bold text-xl">
-    Hector Adrian Roman
+<div class="w-full p-5 md:pb-5 md:px-16 flex justify-between items-center">
+
+  <a routerLink="" class="text-white font-bold text-xl ml-4">
+    <!-- Hector Adrian Roman -->
   </a>
-  <div class="group hidden md:flex md:space-x-12">
-    <a routerLink="" class="text-gray-400 font-semibold text-lg hover:text-white">
-      Home
-    </a>
 
-    <a routerLink="/about" class="text-gray-400 font-semibold text-lg hover:text-white">
-      About
-    </a>
-
-    <a routerLink="/projects" class="text-gray-400 font-semibold text-lg hover:text-white">
-      Projects
-    </a>
-
-    <a href="https://hectorarg.hashnode.dev/" target="_blank"
-      class="text-gray-400 font-semibold text-lg hover:text-white">
-      Blog
-    </a>
-
-    <a href="javascript:void(0)" (click)="navigateTo('Contact')"
-      class="text-gray-400 font-semibold text-lg hover:text-white">
-      Contact
-    </a>
+  <div class="flex items-center gap-4 mr-4">
+    <nav class="flex gap-4">
+      <a routerLink="" class="text-gray-400 font-semibold text-base hover:text-white">
+        Home
+      </a>
+      <a routerLink="/about" class="text-gray-400 font-semibold text-base hover:text-white">
+        About
+      </a>
+      <a routerLink="/projects" class="text-gray-400 font-semibold text-base hover:text-white">
+        Projects
+      </a>
+      <a href="https://hectorarg.hashnode.dev/" target="_blank"
+        class="text-gray-400 font-semibold text-base hover:text-white">
+        Blog
+      </a>
+      <a href="javascript:void(0)" (click)="navigateTo('Contact')"
+        class="text-gray-400 font-semibold text-base hover:text-white">
+        Contact
+      </a>
+    </nav>
+    <div class="flex space-x-1 items-center language-switcher ml-1">
+      <button (click)="changeLang('en')"
+              class="flag-btn focus:outline-none"
+              [class.active]="currentLang === 'en'"
+              title="English"
+              aria-label="Switch to English">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiklEQVR4nO1ZS2jUQAAN1ipKFcUPevAiCIIehG1GLJrQTG0tiCbVKlY9eBFE0YMHpfg/qSBUUESlXsRKBVspiW39i1YvrVap+MPLlq22iclkMyuo6EiiK3Xbbn6bZJF98CADOby3897M7ISiCiigAN+orb1WxPBtyxhBqmcF6ToriK9YQVJZXvzGClKKFcQ4I0jPWUFqZgRxdzkvxqh8wIq1HfNYXjpeXdeZaLjQR1hBslhd10mGj3fVP7GYHps0ODphQPpIko3NDF34uSuvFtzvGnhx4ETP98qNHeT1e0RMHDrZQzLHW3Y+ILrxzaL5nDaAIbBoQPoL5sCpQZYtCUU8UyPVNTa9Td19PED4bXcsMecvvyHZxuLtuMXhM5A2gNNGODqRrCitCUx4bHt3McOLF4eL8ENF00elrKHThJCi3Ipf3TZ59dbOW9lybjfO7MFYBhSL6AYhZEJuxG/vLq7a1N6ZLedeepDdgE4UFbUSQop9G0jHxi7nbnuQ2QE8Gjlw2pf4FcLNzbnKfCYdGYCAJDmw3pN4yLfMYARJ9pJ3J/uAUwMYAjm5asks1wYePh146SXvTvcB2w5o//ThhCvxO/Y/mt9xr/+H17w72QdcGdD0pKZp0xwbMI8HQWXfowGiqKjemfrDh8cxvNjvN/d2PXDRAfJ7pwYfHOk3T5V+c++kB24NYHNFqowttDfw+0jsO/c52QfgiPPSXlsDLC+1BJ1/Tx3QLF51ECGxL+j8ezUga6jL1kDlhnY16Px7N6D3O4nQ16Dz770D4KsjA2F0IDADjCAp+WoAc0CxNaCo+jOPK0TwVPUeWwOyii5FLlQbo8QqanQyA3vyeAZ22xowVpYu9pTPEGiU04soJ8AQ9EUtFo8s8GtH4i0DHDgUuWCYSfqgYwMfDWO2+Sci8sxrf4mHhvBcyg1kTT+WN6uPph+l3GJwcLBEUdGnqMUrKhpSFGUq5QVJuHRd1Nk3ysEmyg8wB85GWNwzlF+Q2toiA4KW0H95jhYJy46ncoF3hEyUVb05xNy3xuNkEpVLmFfe5tW3rKKfga02Kvopa6gh59frw/EZoSpFQ4kgVhtZ1ddQYUAuK5uCOXofhnTSf9ZByoDgOFq+fDoVNnBVbK65xWOOfudaPAfeYkgfwCw9h8oHpCroUoNbugdDusmAdK8B6X7zA94fms+9mANXzHfMd6PWW0AB/wt+AUd01b5eH9N0AAAAAElFTkSuQmCC" alt="usa-circular">
+      </button>
+      <button (click)="changeLang('es')"
+              class="flag-btn focus:outline-none"
+              [class.active]="currentLang === 'es'"
+              title="Español"
+              aria-label="Cambiar a español">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEV0lEQVR4nO2Zb0zUdhjHnzncXi2bLllCe9ASt7n4lql7517MvdreSLYXshZFxWzJHPLGQRCMiwvzEjd0Z7YwhWEkx4ECB8g8/skAnQjugFZlQRjIxryevXYZRt7wXe5w80+c12t75y3hmzxp07TJ95PnaX9Pnx/Rkpa0JMsCsEzRtLVBVStUVL1OCWmjiqqriqrNL4au3r1Wp6jap+F7w8/Qk1ZabhqjhPTPlJB+IxjSEUsoIX06/OxVIibhxh3bHCsZgStjBX4uVuMPh0w0JxGV+4leSoj5VJF/mxH4WVbkEQ4bABAOiUgZJXo3fs43UAojcodZkV/4x7ydAPIixEI4G91EKbZ6X/PemmcYga+/33g8AOR74f2F6FlbzGfmZS5nBL7lUebjCIAwhC2ZYAT+0H+ZjzMAJCKnJfNsTnrWwzWfYICFUaIsU+a5HO4FVuSUx5mPN4C8GLckopW2l04CARBzKTFbVqUxIjefLAAy0fwwkcM4gMiXGjGfQABIRHuNuS+lZazI/ZqEAJMgit4AOsSMdUbNPw5gZuIahioLcK5gNX4sWofxC02WAGQijBC9HhWAFbndVgB+Hh/Euf5j6ClZj8adq9D00atoyGXQsfs1jPefsgQgE30Svf4Frs4KwExgFp3ny3GmsRintqb+G6e3MugpWm8JQCJyGwEYNg2gTGJwpA7f+Q5iyFN2z/w2R+TY9iGPiUs+KwCXDQDwM2YAxqYmELwVQOuAB5V1Beg960LDjvSI8YETezHkPgBfyVuQTjsxqyhmS2g6OoDI3zYDsL/mcygjo/D6GtDSdQD+hvdRn8eieSePprwMDHtduNJVg6u+CuRXbDebgdtxA2jvq8XMzZt4o+Iw9lR9i57edng76iG5d0GuzkHPIRHXz7fg2thFtP/kMZuBvwwAcDfMAHT5e1HR+g2CgUkU+VqRVXMCr7gOYlP5LmyvLMSbx13o7/ChuDofZwaazAJMGQHwm32JL/o7ceyHajgvBJBdexlDro3YfGQHnM1n0ebvg7vnJDoHHvyUyrGV0FBUAFbgas0CBNQQjjZ9jbN9bnzf6cXJmn1wVxXC1VYFb78bzvpS/Kb8YWUdqDECkG91JfYNdqO88Sgamo+j230EhVUFGBy7ZHkllog+jgrg2JKx1o5Wwu5eSDbaShDRU4zAjycbgEQ0YaiZC4sR+JJkA5CJismo2OyXHcn0QyMR3RkjYg0DRCAEzplEAF9QrHoxd/Vz948QnxSARBS4TvR8zABJNFbZZMq80VKKcwbKyLI2UAorct5EA0hEjbYNeRfno4/+U4sTgGeQaDnZPl4XuK8SMF7/EkRPU7yU+kHGRkbkf7cbQCIKjBK9Q4lQ+ub0FazA7WMF7k8bAObCL+sI0YqEmH8AJDs99e4m33SsxpWQPqWE9P1XiFIpSbZZMxVN26OoukcJ6cOKqgXDW6xBVbsTOY9c0z2RezQtMym2WZe0JPr/62+gc15L6TJ7jgAAAABJRU5ErkJggg==" alt="mexico-circular">
+      </button>
+    </div>
   </div>
-</div>
-
-
-<div class="md:hidden xl:hidden fixed z-50 top-auto bottom-0 w-full p-4  ">
-  <nav class="flex justify-evenly py-4 bg-indigo-600 shadow-2xl rounded-lg overflow-hidden">
-    <a href="javascript:void(0)" (click)="navigateTo('Home')" [ngClass]="{'text-indigo-900': active === 'Home'}"
-      class="flex flex-col space-y-1 text-gray-300  justify-center items-center cursor-pointer text-sm font-semibold ">
-      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path
-          d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-      </svg>
-      Home
-    </a>
-
-    <a href="javascript:void(0)" (click)="navigateTo('About')" [ngClass]="{'text-indigo-900': active === 'About'}"
-      class="flex flex-col space-y-1 text-gray-300 justify-center items-center cursor-pointer text-sm font-semibold ">
-      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd"
-          d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
-          clip-rule="evenodd" />
-        <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
-      </svg>
-      About
-    </a>
-
-    <a href="javascript:void(0)" (click)="navigateTo('Projects')" [ngClass]="{'text-indigo-900': active === 'Projects'}"
-      class="flex flex-col space-y-1 text-gray-300 justify-center items-center cursor-pointer text-sm font-semibold">
-      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path
-          d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" />
-      </svg>
-      Projects
-    </a>
-
-    <a href="javascript:void(0)" (click)="navigateTo('Home')" [ngClass]="{'text-indigo-900': active === 'Blog'}"
-      class="flex flex-col space-y-1 text-gray-300 justify-center items-center cursor-pointer text-sm font-semibold ">
-      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd"
-          d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-          clip-rule="evenodd" />
-      </svg>
-      Blog
-    </a>
-
-    <a href="javascript:void(0)" (click)="navigateTo('Contact')" [ngClass]="{'text-indigo-900': active === 'Blog'}"
-      class="flex flex-col space-y-1 text-gray-300 justify-center items-center cursor-pointer text-sm font-semibold ">
-      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path
-          d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-      </svg>
-      Contact
-    </a>
-
-  </nav>
 </div>
 
 <router-outlet></router-outlet>

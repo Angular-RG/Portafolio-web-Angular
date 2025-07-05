@@ -1,0 +1,48 @@
+.language-switcher {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.flag-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  border-radius: 50%;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+  position: relative;
+}
+
+.flag-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #0001;
+}
+
+.flag-btn:focus {
+  box-shadow: 0 0 0 2px #007bff44;
+  background: #f0f0f0;
+}
+
+.flag-btn.active,
+.flag-btn[aria-pressed="true"] {
+  background: #e0e7ff;
+  box-shadow: 0 2px 8px 0 #a5b4fc55;
+}
+
+.flag-btn:hover:not(.active) {
+  background: #f3f4f6;
+}
+
+.flag-btn:active {
+  background: #c7d2fe;
+}

@@ -4,6 +4,7 @@ import { FontSize } from 'src/app/constants/font-size.constants';
 import { IconSize } from 'src/app/constants/icon-size.constants';
 import { CustomButtonColors } from 'src/app/shared/custom-button/custom-button-color.model';
 import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-landing-section',
@@ -22,7 +23,7 @@ export class HomeLandingSectionComponent implements OnInit {
   iconSize: IconSize = IconSize.MD;
   size: FontSize = FontSize.LG;
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
   }
@@ -31,4 +32,7 @@ export class HomeLandingSectionComponent implements OnInit {
     this.scrollToDevProcess.emit();
   }
 
+  changeLang(lang: string) {
+    this.translate.use(lang);
+  }
 }

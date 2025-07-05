@@ -8,6 +8,7 @@ import { RecommendationSectionComponent } from './recommendation-section/recomme
 import { HomeSectionComponent } from './home-section/home-section.component';
 import { ComponentsModule } from '../../components/components.module';
 import { TechnologiesSectionComponent } from './technologies-section/technologies-section.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [HomeLandingSectionComponent, DevProcessSectionComponent,RecommendationSectionComponent, HomeSectionComponent, TechnologiesSectionComponent],
@@ -15,7 +16,8 @@ import { TechnologiesSectionComponent } from './technologies-section/technologie
     CommonModule,
     HomeRoutingModule,
     ComponentsModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }

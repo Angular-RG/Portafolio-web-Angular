@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +10,16 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   active: string = 'Home';
-  constructor(private _router: Router) { }
+  currentLang: string;
+  constructor(private _router: Router, private translate: TranslateService) {
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang() || 'en';
+    this.translate.onLangChange.subscribe(event => {
+      this.currentLang = event.lang;
+    });
+  }
 
   ngOnInit(): void {
-    
+
   }
 
   navigateTo(destination: string) {
@@ -30,4 +37,8 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  changeLang(lang: string) {
+    this.translate.use(lang);
+    this.currentLang = lang;
+  }
 }

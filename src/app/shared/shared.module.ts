@@ -10,6 +10,7 @@ import { ProcessInfoComponent } from './process-info/process-info.component';
 import { TestimonialCardComponent } from './testimonial-card/testimonial-card.component';
 import { RouterModule } from '@angular/router';
 import { ChipsComponent } from './chips/chips.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -22,13 +23,14 @@ import { ChipsComponent } from './chips/chips.component';
     ProcessInfoComponent,
     TestimonialCardComponent,
     ChipsComponent,
-    
+
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     TestimonialCardComponent,

@@ -27,7 +27,7 @@ export class TechnologiesSectionComponent {
       nombre: 'Angular',
       iconType: 'ANGULAR',
       categoria: 'Frontend',
-      proficiency: 95,
+      proficiency: 85,
       color: '#DD0031',
       yearsExperience: 4,
       featured: true,
