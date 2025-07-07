@@ -1,12 +1,12 @@
 {
   "HOME": {
-    "TITLE1": "Developer",
-    "TITLE2": "Full Stack Web SSr",
-    "DESCRIPTION": "I drive digital transformation for companies and governments, creating <span class=\"text-primary font-semibold\">robust and scalable web solutions</span> with modern technologies like <strong>Angular</strong>, <strong>Spring Boot</strong>, <strong>Oracle</strong>, and <strong>PostgreSQL</strong>.<br><span class=\"block mt-2\">Over 3 years developing high-impact and efficient systems.</span>",
-    "BUTTON": "Let's Start",
+    "TITLE1": "Software Engineer",
+    "TITLE2": "Senior Full Stack Web Developer",
+    "DESCRIPTION": "I lead digital transformation for organizations by architecting <span class=\"text-primary font-semibold\">robust, scalable, and high-performance web solutions</span> using cutting-edge technologies such as <strong>Angular</strong>, <strong>Spring Boot</strong>, <strong>Oracle</strong>, and <strong>PostgreSQL</strong>.<br><span class=\"block mt-2\">Proven track record of delivering high-impact, enterprise-grade systems for over 4 years.</span>",
+    "BUTTON": "Get Started",
     "TECHNOLOGIES": {
-      "SUBHEADING": "What I work with",
-      "HEADING": "Technologies & Skills",
+      "SUBHEADING": "Core Competencies",
+      "HEADING": "Technologies & Key Skills",
       "YEARS": "years",
       "CATEGORY_ALL": "All",
       "CATEGORY_FRONTEND": "Frontend",
@@ -16,32 +16,32 @@
       "CATEGORY_CLOUD": "Cloud"
     },
     "DEV_PROCESS": {
-      "SUBHEADING": "How I work?",
-      "HEADING": "Development Process",
+      "SUBHEADING": "My Approach",
+      "HEADING": "Development Lifecycle",
       "RESEARCH": {
-        "HEADING": "Research & Strategy",
-        "SUBHEADING": "Ask First.",
-        "DESCRIPTION": "Before starting development, I always make sure I know what needs to be done and what I need to learn to start on the right foot. Then comes the process of breaking down the work into atomic tasks and making sure the order and estimates of the tasks are perfect."
+        "HEADING": "Discovery & Strategy",
+        "SUBHEADING": "Requirements First.",
+        "DESCRIPTION": "I begin every project with a comprehensive analysis of business requirements and technical needs, ensuring a clear roadmap for success. I break down complex objectives into actionable tasks, prioritize deliverables, and provide accurate estimations for seamless execution."
       },
       "DESIGN": {
-        "HEADING": "Brainstorming & Design",
-        "SUBHEADING": "Problem Solving.",
-        "DESCRIPTION": "In this step, I take each atomic task and look for the best approach to tackle the problem. I discuss multiple ideas with team members and create a preliminary design for both front-end and back-end tasks."
+        "HEADING": "Ideation & Solution Design",
+        "SUBHEADING": "Innovative Problem Solving.",
+        "DESCRIPTION": "I collaborate with cross-functional teams to brainstorm optimal solutions, leveraging best practices in UI/UX and system architecture. I create detailed designs for both frontend and backend, ensuring alignment with business goals."
       },
       "DEV": {
-        "HEADING": "Development",
-        "SUBHEADING": "Bringing Ideas to Life.",
-        "DESCRIPTION": "This step is about executing the atomic tasks established in the previous steps."
+        "HEADING": "Implementation",
+        "SUBHEADING": "Turning Vision into Reality.",
+        "DESCRIPTION": "I execute development with a focus on code quality, maintainability, and scalability, following agile methodologies and leveraging CI/CD pipelines for rapid delivery."
       },
       "QA": {
-        "HEADING": "Quality",
-        "SUBHEADING": "Testing.",
-        "DESCRIPTION": "This step involves unit testing as well as integration testing of the functionality. I am still working on learning to write automated test cases."
+        "HEADING": "Quality Assurance",
+        "SUBHEADING": "Comprehensive Testing.",
+        "DESCRIPTION": "I ensure robust quality through unit, integration, and end-to-end testing, continuously improving automated test coverage and delivering reliable software solutions."
       }
     },
     "RECOMMENDATIONS": {
-      "SUBHEADING": "What they say about me.",
-      "HEADING": "Recommendations",
+      "SUBHEADING": "What Industry Leaders Say",
+      "HEADING": "Professional Recommendations",
       "FEATURED": "Featured",
       "SHOW_ALL": "Show All",
       "SHOW_FEATURED": "Featured Only"
@@ -50,40 +50,64 @@
   "TESTIMONIALS": {
     "T1": {
       "NAME": "Luis Angel Flores",
-      "POSITION": "Angular Developer",
+      "POSITION": "Java-Spring Boot Developer",
       "COMPANY": "CETIC - Durango Government",
-      "CONTENT": "Passionate software developer with experience in various languages and technologies. Committed to code quality and efficient problem solving. Highly focused professional on continuous improvement, working collaboratively to achieve outstanding results."
+      "CONTENT": "Results-driven software engineer with expertise in multiple programming languages and frameworks. Demonstrates a strong commitment to code excellence, efficient problem-solving, and continuous professional growth. Excels in collaborative environments to deliver outstanding business value."
     },
     "T2": {
       "NAME": "Antonio Vazquez",
       "POSITION": "Development Team Leader",
       "COMPANY": "CETIC - Durango Government",
-      "CONTENT": "Héctor is an exceptional developer with great analytical skills and complex problem-solving abilities. His experience in government systems and his mastery of the Java-Angular stack make him a valuable asset for any team."
+      "CONTENT": "Héctor is a top-tier developer with exceptional analytical and critical thinking skills. His extensive experience in government systems and mastery of the Java-Angular technology stack make him an invaluable asset to any high-performing team."
     },
     "T3": {
-      "NAME": "Carlos Rodríguez",
-      "POSITION": "Tech Lead",
+      "NAME": "Tania Espinoza Gomez",
+      "POSITION": "Backend Semi Senior",
       "COMPANY": "Freelance Projects",
-      "CONTENT": "Working with Héctor has been an excellent experience. His technical knowledge in Spring Boot and Angular, combined with his ability to deliver projects on time, stand him out as a reliable senior developer."
+      "CONTENT": "Collaborating with Héctor has been a remarkable experience. His deep technical expertise in Spring Boot and Angular, combined with his ability to consistently deliver projects on schedule, distinguishes him as a highly reliable semi senior developer."
     },
     "T4": {
-      "NAME": "Ana Martínez",
-      "POSITION": "Systems Architect",
-      "COMPANY": "Durango Municipality",
-      "CONTENT": "The microservices architecture implemented by Héctor in our municipal systems has significantly improved performance and scalability. His technical vision and leadership skills are exceptional."
+      "NAME": "Rodolfo Nava",
+      "POSITION": "Head of Digital Government",
+      "COMPANY": "CETIC - Durango Government",
+      "CONTENT": "The microservices architecture designed and implemented by Héctor has dramatically enhanced the performance and scalability of our municipal systems. His strategic vision and leadership are truly outstanding."
+    },
+    "T5": {
+      "NAME": "Juan Carlos",
+      "POSITION": "Deputy Director of Information Technology of the Municipality",
+      "COMPANY": "Municipality of Durango",
+      "CONTENT": "Héctor consistently delivers innovative solutions that exceed expectations. His ability to translate business requirements into scalable technical architectures is outstanding. He is a key contributor to our product success."
+    },
+    "T6": {
+      "NAME": "Victor Manuel Rivera",
+      "POSITION": "Semi Senior Backend Engineer",
+      "COMPANY": "CETIC - Durango Government",
+      "CONTENT": "Working alongside Héctor has been a privilege. His expertise in cloud technologies and microservices, combined with his collaborative spirit, has elevated our team's performance and project outcomes."
+    },
+    "T7": {
+      "NAME": "Susana Chirinos",
+      "POSITION": "UX/UI Designer",
+      "COMPANY": "Freelance Projects",
+      "CONTENT": "Héctor's attention to detail and user-centric approach make him an exceptional developer. He bridges the gap between design and development, ensuring seamless user experiences in every project."
+    },
+    "T8": {
+      "NAME": "Diego Villarreal",
+      "POSITION": "DevOps Lead",
+      "COMPANY": "CETIC - Durango Government",
+      "CONTENT": "Héctor works closely with the DevOps team to coordinate releases, integrate tools like SonarQube, and follow best practices in Git. While his main focus is development, his collaboration and communication with DevOps ensure efficient integration and deployment processes."
     }
   },
   "ABOUT": {
-    "SUBHEADING": "Who I am",
-    "HEADING": "About me",
-    "DESCRIPTION": "Hello, I'm Héctor Adrián Román. I'm a Senior Full Stack Developer with over 3 years of experience working at the Government of Durango State (CETIC), specializing in complex government systems and enterprise applications development.\n\nMy experience includes developing robust web applications using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Angular</strong>, <strong>TypeScript</strong> and databases like <strong>Oracle</strong> and <strong>PostgreSQL</strong>. I have led monolithic architecture and microservices projects, implementing scalable solutions that handle thousands of concurrent users.\n\nI have experience in the entire software development lifecycle, from requirements analysis to production deployment, working with agile methodologies and CI/CD tools.",
+    "SUBHEADING": "Professional Profile",
+    "HEADING": "About Me",
+    "DESCRIPTION": "Hello, I'm Héctor Adrián Román, a Senior Full Stack Developer with a proven track record of over 4 years at the Government of Durango State (CETIC). I specialize in architecting and delivering complex government and enterprise applications.\n\nMy expertise spans the development of secure, scalable web applications using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Angular</strong>, <strong>TypeScript</strong>, and enterprise databases such as <strong>Oracle</strong> and <strong>PostgreSQL</strong>. I have successfully led both monolithic and microservices-based projects, delivering solutions that support thousands of concurrent users.\n\nI am proficient in the complete software development lifecycle, from requirements gathering and stakeholder engagement to production deployment, leveraging agile methodologies and modern CI/CD pipelines to ensure high-quality, timely delivery.",
     "BUTTON": "Download CV"
   },
   "PROJECTS": {
-    "SUBHEADING": "Projects I've worked on",
-    "HEADING": "Projects",
+    "SUBHEADING": "Highlighted Projects",
+    "HEADING": "Project Portfolio",
     "SEARCH": "Search projects...",
-    "SHOWING": "Showing",
+    "SHOWING": "Displaying",
     "OF": "of",
     "PROJECTS": "projects",
     "CATEGORY_ALL": "All",
@@ -93,9 +117,9 @@
     "VIEW_PROJECT": "View Project"
   },
   "CONTACT": {
-    "SUBHEADING": "What's on your mind",
-    "HEADING": "Contact me",
-    "DESCRIPTION": "Excited to work together on something. I'm always open to opportunities to learn something new every day. Let's connect!"
+    "SUBHEADING": "Let's Connect",
+    "HEADING": "Contact Me",
+    "DESCRIPTION": "Eager to collaborate on innovative projects. I am always open to new opportunities, continuous learning, and professional growth. Reach out to discuss how we can create value together!"
   },
   "NAVBAR": {
     "HOME": "Home",

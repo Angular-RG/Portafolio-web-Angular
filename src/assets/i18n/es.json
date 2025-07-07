@@ -1,12 +1,12 @@
 {
   "HOME": {
-    "TITLE1": "Desarrollador",
-    "TITLE2": "Full Stack Web SSr",
-    "DESCRIPTION": "Impulso la transformación digital de empresas y gobiernos, creando <span class=\"text-primary font-semibold\">soluciones web robustas y escalables</span> con tecnologías modernas como <strong>Angular</strong>, <strong>Spring Boot</strong>, <strong>Oracle</strong> y <strong>PostgreSQL</strong>.<br><span class=\"block mt-2\">Más de 3 años desarrollando sistemas de alto impacto y eficiencia.</span>",
-    "BUTTON": "Iniciemos",
+    "TITLE1": "Ingeniero de Software",
+    "TITLE2": "Desarrollador Web Full Stack Senior",
+    "DESCRIPTION": "Lidero la transformación digital de organizaciones, diseñando <span class=\"text-primary font-semibold\">soluciones web robustas, escalables y de alto rendimiento</span> con tecnologías de vanguardia como <strong>Angular</strong>, <strong>Spring Boot</strong>, <strong>Oracle</strong> y <strong>PostgreSQL</strong>.<br><span class=\"block mt-2\">Historial comprobado entregando sistemas empresariales de alto impacto durante más de 4 años.</span>",
+    "BUTTON": "Comencemos",
     "TECHNOLOGIES": {
-      "SUBHEADING": "Con lo que trabajo",
-      "HEADING": "Tecnologías y Skills",
+      "SUBHEADING": "Competencias Clave",
+      "HEADING": "Tecnologías y Habilidades Destacadas",
       "YEARS": "años",
       "CATEGORY_ALL": "Todas",
       "CATEGORY_FRONTEND": "Frontend",
@@ -16,32 +16,32 @@
       "CATEGORY_CLOUD": "Nube"
     },
     "DEV_PROCESS": {
-      "SUBHEADING": "¿Cómo trabajo?",
-      "HEADING": "Proceso de Desarrollo",
+      "SUBHEADING": "Mi Enfoque",
+      "HEADING": "Ciclo de Desarrollo",
       "RESEARCH": {
-        "HEADING": "Investigación y Estrategia",
-        "SUBHEADING": "Pregunta Primero.",
-        "DESCRIPTION": "Antes de comenzar a desarrollar, siempre me aseguro de saber qué necesita hacerse y qué tengo que aprender para empezar con buen pie. Luego viene el proceso de desglosar el trabajo en tareas atómicas y asegurarme de que el orden y las estimaciones de las tareas sean perfectos."
+        "HEADING": "Descubrimiento y Estrategia",
+        "SUBHEADING": "Requerimientos Primero.",
+        "DESCRIPTION": "Inicio cada proyecto con un análisis integral de los requerimientos de negocio y necesidades técnicas, asegurando una hoja de ruta clara hacia el éxito. Descompongo objetivos complejos en tareas accionables, priorizo entregables y realizo estimaciones precisas para una ejecución fluida."
       },
       "DESIGN": {
-        "HEADING": "Lluvia de Ideas y Diseño",
-        "SUBHEADING": "Resolución de Problemas.",
-        "DESCRIPTION": "En este paso, tomo cada tarea atómica y busco el mejor enfoque para abordar el problema. Discuto múltiples ideas con los miembros del equipo y creo un diseño preliminar tanto para tareas de front-end como de back-end."
+        "HEADING": "Ideación y Diseño de Soluciones",
+        "SUBHEADING": "Resolución Innovadora de Problemas.",
+        "DESCRIPTION": "Colaboro con equipos multidisciplinarios para idear soluciones óptimas, aplicando mejores prácticas en UI/UX y arquitectura de sistemas. Elaboro diseños detallados tanto para frontend como backend, alineados a los objetivos del negocio."
       },
       "DEV": {
-        "HEADING": "Desarrollo",
-        "SUBHEADING": "Dando Vida a las Ideas.",
-        "DESCRIPTION": "Este paso se trata de ejecutar las tareas atómicas establecidas en los pasos anteriores."
+        "HEADING": "Implementación",
+        "SUBHEADING": "Convirtiendo Visión en Realidad.",
+        "DESCRIPTION": "Ejecuto el desarrollo con enfoque en calidad, mantenibilidad y escalabilidad, aplicando metodologías ágiles y pipelines CI/CD para una entrega rápida y eficiente."
       },
       "QA": {
-        "HEADING": "Calidad",
-        "SUBHEADING": "Pruebas.",
-        "DESCRIPTION": "Este paso involucra pruebas unitarias así como pruebas de integración de la funcionalidad. Aún estoy trabajando en aprender a escribir casos de prueba automatizados."
+        "HEADING": "Aseguramiento de Calidad",
+        "SUBHEADING": "Pruebas Integrales.",
+        "DESCRIPTION": "Garantizo la calidad mediante pruebas unitarias, de integración y end-to-end, mejorando continuamente la cobertura automatizada y entregando soluciones confiables."
       }
     },
     "RECOMMENDATIONS": {
-      "SUBHEADING": "Lo que dicen de mí",
-      "HEADING": "Recomendaciones",
+      "SUBHEADING": "Lo que opinan los líderes del sector",
+      "HEADING": "Recomendaciones Profesionales",
       "FEATURED": "Destacada",
       "SHOW_ALL": "Ver Todas",
       "SHOW_FEATURED": "Solo Destacadas"
@@ -50,38 +50,62 @@
   "TESTIMONIALS": {
     "T1": {
       "NAME": "Luis Angel Flores",
-      "POSITION": "Desarrollador Angular",
+      "POSITION": "Desarrollador Java-Spring Boot",
       "COMPANY": "CETIC - Gobierno de Durango",
-      "CONTENT": "Apasionado desarrollador de software con experiencia en diversos lenguajes y tecnologías. Comprometido con la calidad del código y la resolución eficiente de problemas. Profesional altamente enfocado en la mejora continua, trabajando de forma colaborativa para alcanzar resultados sobresalientes."
+      "CONTENT": "Ingeniero de software orientado a resultados, con experiencia en múltiples lenguajes y frameworks. Demuestra un fuerte compromiso con la excelencia en el código, la resolución eficiente de problemas y el crecimiento profesional continuo. Destaca en entornos colaborativos para aportar valor al negocio."
     },
     "T2": {
       "NAME": "Antonio Vazquez",
       "POSITION": "Líder del área de desarrollo",
       "COMPANY": "CETIC - Gobierno de Durango",
-      "CONTENT": "Héctor es un desarrollador excepcional con gran capacidad de análisis y resolución de problemas complejos. Su experiencia en sistemas gubernamentales y su dominio del stack Java-Angular lo convierten en un activo valioso para cualquier equipo."
+      "CONTENT": "Héctor es un desarrollador de primer nivel, con habilidades analíticas y de pensamiento crítico excepcionales. Su amplia experiencia en sistemas gubernamentales y dominio del stack Java-Angular lo convierten en un recurso invaluable para cualquier equipo de alto rendimiento."
     },
     "T3": {
-      "NAME": "Carlos Rodríguez",
-      "POSITION": "Tech Lead",
+      "NAME": "Tania Espinoza Gomez",
+      "POSITION": "Backend Senior",
       "COMPANY": "Proyectos Freelance",
-      "CONTENT": "Trabajar con Héctor ha sido una experiencia excelente. Su conocimiento técnico en Spring Boot y Angular, combinado con su capacidad para entregar proyectos en tiempo y forma, lo destacan como un desarrollador senior confiable."
+      "CONTENT": "Colaborar con Héctor ha sido una experiencia sobresaliente. Su profundo conocimiento técnico en Spring Boot y Angular, junto con su capacidad para entregar proyectos puntualmente, lo distingue como un desarrollador senior altamente confiable."
     },
     "T4": {
-      "NAME": "Ana Martínez",
-      "POSITION": "Arquitecta de Sistemas",
+      "NAME": "Rodolfo Nava",
+      "POSITION": "Jefe de Gobierno Digital",
+      "COMPANY": "CETIC - Gobierno de Durango",
+      "CONTENT": "La arquitectura de microservicios diseñada e implementada por Héctor ha mejorado drásticamente el rendimiento y la escalabilidad de nuestros sistemas municipales. Su visión estratégica y liderazgo son realmente sobresalientes."
+    },
+    "T5": {
+      "NAME": "Juan Carlos",
+      "POSITION": "Subdirector de Tecnologías de la Información del Municipio",
       "COMPANY": "Municipio de Durango",
-      "CONTENT": "La arquitectura de microservicios implementada por Héctor en nuestros sistemas municipales ha mejorado significativamente el rendimiento y la escalabilidad. Su visión técnica y capacidad de liderazgo son excepcionales."
+      "CONTENT": "Héctor entrega soluciones innovadoras que superan las expectativas. Su capacidad para traducir requerimientos de negocio en arquitecturas técnicas escalables es sobresaliente. Es un pilar clave en el éxito de nuestros productos."
+    },
+    "T6": {
+      "NAME": "Victor Manuel Rivera",
+      "POSITION": "Ingeniero Backend Semi Senior",
+      "COMPANY": "CETIC - Gobierno de Durango",
+      "CONTENT": "Trabajar junto a Héctor ha sido un privilegio. Su experiencia en tecnologías cloud y microservicios, sumada a su espíritu colaborativo, ha elevado el desempeño y los resultados de nuestro equipo."
+    },
+    "T7": {
+      "NAME": "Susana Chirinos",
+      "POSITION": "Diseñadora UX/UI",
+      "COMPANY": "Proyectos Freelance",
+      "CONTENT": "La atención al detalle y el enfoque en el usuario de Héctor lo convierten en un desarrollador excepcional. Logra unir diseño y desarrollo, garantizando experiencias de usuario sobresalientes en cada proyecto."
+    },
+    "T8": {
+      "NAME": "Diego Villarreal",
+      "POSITION": "Líder DevOps",
+      "COMPANY": "CETIC - Gobierno de Durango",
+      "CONTENT": "Héctor trabaja de la mano con el equipo DevOps para coordinar las liberaciones, la integración de herramientas como SonarQube y el manejo de buenas prácticas en Git. Aunque su enfoque principal es el desarrollo, su colaboración y comunicación con el área de DevOps facilita procesos de integración y despliegue eficientes."
     }
   },
   "ABOUT": {
-    "SUBHEADING": "Quién soy",
-    "HEADING": "Acerca de mí",
-    "DESCRIPTION": "Hola, soy Héctor Adrián Román. Soy Desarrollador Full Stack Senior con más de 3 años de experiencia trabajando en el Gobierno del Estado de Durango (CETIC), especializándome en el desarrollo de sistemas gubernamentales complejos y aplicaciones empresariales.\n\nMi experiencia incluye el desarrollo de aplicaciones web robustas utilizando <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Angular</strong>, <strong>TypeScript</strong> y bases de datos como <strong>Oracle</strong> y <strong>PostgreSQL</strong>. He liderado proyectos de arquitectura monolítica y microservicios, implementando soluciones escalables que manejan miles de usuarios concurrentes.\n\nTengo experiencia en todo el ciclo de desarrollo de software, desde el análisis de requisitos hasta el despliegue en producción, trabajando con metodologías ágiles y herramientas de CI/CD.",
+    "SUBHEADING": "Perfil Profesional",
+    "HEADING": "Sobre Mí",
+    "DESCRIPTION": "Hola, soy Héctor Adrián Román, Desarrollador Full Stack Senior con historial comprobado de más de 4 años en el Gobierno del Estado de Durango (CETIC). Especialista en diseñar y entregar aplicaciones empresariales y gubernamentales complejas.\n\nMi experiencia abarca el desarrollo de aplicaciones web seguras y escalables usando <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Angular</strong>, <strong>TypeScript</strong> y bases de datos empresariales como <strong>Oracle</strong> y <strong>PostgreSQL</strong>. He liderado exitosamente proyectos monolíticos y basados en microservicios, entregando soluciones que soportan miles de usuarios concurrentes.\n\nDomino todo el ciclo de vida del desarrollo de software, desde la recopilación de requerimientos y la gestión de stakeholders hasta el despliegue en producción, aplicando metodologías ágiles y pipelines CI/CD modernos para asegurar entregas de alta calidad y a tiempo.",
     "BUTTON": "Descargar CV"
   },
   "PROJECTS": {
-    "SUBHEADING": "Proyectos en los que he trabajado",
-    "HEADING": "Proyectos",
+    "SUBHEADING": "Proyectos Destacados",
+    "HEADING": "Portafolio de Proyectos",
     "SEARCH": "Buscar proyectos...",
     "SHOWING": "Mostrando",
     "OF": "de",
@@ -93,9 +117,9 @@
     "VIEW_PROJECT": "Ver Proyecto"
   },
   "CONTACT": {
-    "SUBHEADING": "Qué tienes en mente",
+    "SUBHEADING": "Conectemos",
     "HEADING": "Contáctame",
-    "DESCRIPTION": "Emocionado de trabajar juntos en algo. Siempre estoy abierto a oportunidades para aprender algo nuevo todos los días. ¡Conectémonos!"
+    "DESCRIPTION": "Listo para colaborar en proyectos innovadores. Siempre abierto a nuevas oportunidades, aprendizaje continuo y crecimiento profesional. ¡Contáctame y creemos valor juntos!"
   },
   "NAVBAR": {
     "HOME": "Inicio",
