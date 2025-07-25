@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+    data: { preload: true }
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule),
+    data: { preload: true }
   },
   {
     path: 'projects',
-    loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule)
+    loadChildren: () => import('./pages/projects/projects.module').then(m => m.ProjectsModule),
+    data: { preload: true }
   },
   {
     path: '**',
@@ -21,7 +24,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
+  imports: [RouterModule.forRoot(routes, { 
+    scrollPositionRestoration: 'top',
+    preloadingStrategy: PreloadAllModules,
+    enableTracing: false, // Set to true for debugging
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
