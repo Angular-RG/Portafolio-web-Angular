@@ -1,0 +1,22 @@
+<div class="toast-container">
+  <div 
+    *ngFor="let error of errors$ | async; trackBy: trackByError"
+    [class]="getErrorClass(error.type)"
+    class="animate-slide-in">
+    
+    <div class="toast-content">
+      <span class="toast-icon">{{ getErrorIcon(error.type) }}</span>
+      <div class="toast-message">
+        <p class="toast-text">{{ error.message }}</p>
+        <small class="toast-timestamp">{{ error.timestamp | date:'short' }}</small>
+      </div>
+    </div>
+    
+    <button 
+      class="toast-close"
+      (click)="removeError(error.id)"
+      type="button">
+      ×
+    </button>
+  </div>
+</div>

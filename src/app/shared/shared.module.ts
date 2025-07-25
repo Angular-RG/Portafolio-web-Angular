@@ -11,6 +11,10 @@ import { TestimonialCardComponent } from './testimonial-card/testimonial-card.co
 import { RouterModule } from '@angular/router';
 import { ChipsComponent } from './chips/chips.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
+import { SmoothScrollDirective } from './directives/smooth-scroll.directive';
+import { IntersectionObserverDirective } from './directives/intersection-observer.directive';
+import { ToastNotificationComponent } from './toast-notification/toast-notification.component';
 
 
 @NgModule({
@@ -23,6 +27,10 @@ import { TranslateModule } from '@ngx-translate/core';
     ProcessInfoComponent,
     TestimonialCardComponent,
     ChipsComponent,
+    SkeletonLoaderComponent,
+    SmoothScrollDirective,
+    IntersectionObserverDirective,
+    ToastNotificationComponent,
 
   ],
   imports: [
@@ -40,7 +48,11 @@ import { TranslateModule } from '@ngx-translate/core';
     HeadingComponent,
     CustomButtonComponent,
     IconComponent,
-    ChipsComponent
+    ChipsComponent,
+    SkeletonLoaderComponent,
+    SmoothScrollDirective,
+    IntersectionObserverDirective,
+    ToastNotificationComponent
   ]
 })
 export class SharedModule { }

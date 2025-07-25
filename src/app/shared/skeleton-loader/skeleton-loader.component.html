@@ -1,0 +1,7 @@
+<div class="skeleton-container">
+  <div 
+    *ngFor="let _ of getArray(count); trackBy: trackByIndex"
+    [class]="skeletonClass"
+    [ngStyle]="skeletonStyle">
+  </div>
+</div>

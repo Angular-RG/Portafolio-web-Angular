@@ -1,4 +1,6 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, ChangeDetectionStrategy, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { BehaviorSubject, Subject, combineLatest, Observable } from 'rxjs';
+import { map, startWith, takeUntil, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { staggerFade } from 'src/app/animations/animations';
 import { IconSize } from 'src/app/constants/icon-size.constants';
 import { HeadingColors } from 'src/app/shared/heading/heading-color.model';
@@ -10,15 +12,131 @@ import { Technology } from 'src/app/shared/interfaces/enhanced-portfolio.interfa
   styleUrls: ['./technologies-section.component.scss'],
   animations: [
     staggerFade
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TechnologiesSectionComponent {
+export class TechnologiesSectionComponent implements OnInit, OnDestroy {
 
   inView : boolean = false;
   @ViewChild('techUsed') techUsed: ElementRef | undefined;
 
   colors = HeadingColors.DEFAULT_GRADIENT
   sizeXXL = IconSize.XXL;
+
+  // Reactive state management with RxJS
+  private destroy$ = new Subject<void>();
+  private selectedCategory$ = new BehaviorSubject<string>('All');
+  private showOnlyFeatured$ = new BehaviorSubject<boolean>(true);
+  private currentPage$ = new BehaviorSubject<number>(1);
+  private sortCriteria$ = new BehaviorSubject<'proficiency' | 'experience' | 'name'>('proficiency');
+
+  // Observable streams for reactive programming
+  public filteredTechnologies$!: Observable<Technology[]>;
+  public paginatedTechnologies$!: Observable<Technology[]>;
+  public totalPages$!: Observable<number>;
+  public showPagination$!: Observable<boolean>;
+  public categoryCount$!: Observable<{ [key: string]: number }>;
+
+  constructor(private cdr: ChangeDetectorRef) {
+    this.setupReactiveStreams();
+  }
+
+  ngOnInit(): void {
+    // Initialize component
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  private setupReactiveStreams(): void {
+    // Setup filtered technologies stream
+    this.filteredTechnologies$ = combineLatest([
+      this.selectedCategory$,
+      this.showOnlyFeatured$,
+      this.sortCriteria$
+    ]).pipe(
+      debounceTime(150),
+      distinctUntilChanged(),
+      map(([category, featured, sortBy]) => {
+        let filtered = [...this.technologies];
+
+        // Apply category filter
+        if (category !== 'All') {
+          filtered = filtered.filter(tech => tech.categoria === category);
+        }
+
+        // Apply featured filter
+        if (featured) {
+          filtered = filtered.filter(tech => tech.featured);
+        }
+
+        // Apply sorting
+        filtered.sort((a, b) => {
+          switch (sortBy) {
+            case 'proficiency':
+              return b.proficiency - a.proficiency;
+            case 'experience':
+              return b.yearsExperience - a.yearsExperience;
+            case 'name':
+              return a.nombre.localeCompare(b.nombre);
+            default:
+              return 0;
+          }
+        });
+
+        return filtered;
+      }),
+      takeUntil(this.destroy$)
+    );
+
+    // Setup paginated technologies stream
+    this.paginatedTechnologies$ = combineLatest([
+      this.filteredTechnologies$,
+      this.currentPage$
+    ]).pipe(
+      map(([technologies, page]) => {
+        const startIndex = (page - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        return technologies.slice(startIndex, endIndex);
+      }),
+      takeUntil(this.destroy$)
+    );
+
+    // Setup total pages stream
+    this.totalPages$ = this.filteredTechnologies$.pipe(
+      map(technologies => Math.ceil(technologies.length / this.itemsPerPage)),
+      takeUntil(this.destroy$)
+    );
+
+    // Setup show pagination stream
+    this.showPagination$ = this.filteredTechnologies$.pipe(
+      map(technologies => technologies.length > this.itemsPerPage),
+      takeUntil(this.destroy$)
+    );
+
+    // Setup category count stream
+    this.categoryCount$ = this.showOnlyFeatured$.pipe(
+      map(featured => {
+        const count: { [key: string]: number } = {};
+        this.categories.forEach(category => {
+          if (category === 'All') {
+            count[category] = featured
+              ? this.technologies.filter(t => t.featured).length
+              : this.technologies.length;
+          } else {
+            const filtered = this.technologies.filter(t => t.categoria === category);
+            count[category] = featured
+              ? filtered.filter(t => t.featured).length
+              : filtered.length;
+          }
+        });
+        return count;
+      }),
+      takeUntil(this.destroy$)
+    );
+  }
 
   technologies: Technology[] = [
     // FRONTEND - Tecnologías principales primero
@@ -274,6 +392,7 @@ export class TechnologiesSectionComponent {
   itemsPerPage = 12;
   currentPage = 1;
 
+  // Reactive getters for backwards compatibility with template
   get filteredTechnologies(): Technology[] {
     let filtered = this.technologies;
 
@@ -322,52 +441,59 @@ export class TechnologiesSectionComponent {
     return count;
   }
 
+  // Enhanced methods with reactive programming
   filterByCategory(category: string): void {
     this.selectedCategory = category;
-    this.currentPage = 1; // Reset a primera página al cambiar filtro
+    this.selectedCategory$.next(category);
+    this.currentPage = 1;
+    this.currentPage$.next(1);
+    this.cdr.markForCheck();
   }
 
   toggleFeaturedView(): void {
     this.showOnlyFeatured = !this.showOnlyFeatured;
-    this.currentPage = 1; // Reset a primera página al cambiar vista
+    this.showOnlyFeatured$.next(this.showOnlyFeatured);
+    this.currentPage = 1;
+    this.currentPage$.next(1);
+    this.cdr.markForCheck();
   }
 
   nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
+      this.currentPage$.next(this.currentPage);
+      this.cdr.markForCheck();
     }
   }
 
   previousPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
+      this.currentPage$.next(this.currentPage);
+      this.cdr.markForCheck();
     }
   }
 
   goToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;
+      this.currentPage$.next(page);
+      this.cdr.markForCheck();
     }
   }
 
   // Método mejorado para ordenamiento dinámico
   sortTechnologies(criteria: 'proficiency' | 'experience' | 'name'): void {
-    this.technologies.sort((a, b) => {
-      switch (criteria) {
-        case 'proficiency':
-          return b.proficiency - a.proficiency;
-        case 'experience':
-          return b.yearsExperience - a.yearsExperience;
-        case 'name':
-          return a.nombre.localeCompare(b.nombre);
-        default:
-          return 0;
-      }
-    });
+    this.sortCriteria$.next(criteria);
+    this.cdr.markForCheck();
   }
 
   trackByTechnology(index: number, tech: Technology): number {
     return tech.id;
+  }
+
+  trackByCategory(index: number, category: string): string {
+    return category;
   }
 
   getCategoryTranslationKey(category: string): string {
@@ -391,7 +517,10 @@ export class TechnologiesSectionComponent {
   checkScroll() {
     const scrollPosition = window.pageYOffset + window.innerHeight;
     if (this.techUsed && this.techUsed.nativeElement.offsetTop <= scrollPosition) {
-      this.inView = true;
+      if (!this.inView) {
+        this.inView = true;
+        this.cdr.markForCheck();
+      }
     }
   }
 

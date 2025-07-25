@@ -5,13 +5,137 @@
     <app-heading [bgColor]="colors" [headingText]="'CONTACT.HEADING' | translate"></app-heading>
   </div>
 
-  <div class="w-full h-full space-y-4 flex flex-col justify-center items-center">
+  <div class="w-full h-full space-y-6 flex flex-col justify-center items-center">
 
     <div class="w-full flex text-gray-400 text-xl font-medium">
       {{ 'CONTACT.DESCRIPTION' | translate }}
     </div>
 
-    <div class="bg-gray-900 text-gray-400 rounded-lg flex justify-between items-center">
+    <!-- CV Download Section -->
+    <div class="w-full flex flex-col md:flex-row gap-4 items-center justify-center">
+      <button 
+        (click)="downloadCV('pdf')"
+        class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+        [disabled]="isLoading$ | async">
+        <app-icon iconType="DOWNLOAD" [iconSize]="sizeMD" class="text-white"></app-icon>
+        <span>Download CV (PDF)</span>
+      </button>
+      
+      <button 
+        (click)="downloadCV('doc')"
+        class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+        [disabled]="isLoading$ | async">
+        <app-icon iconType="DOWNLOAD" [iconSize]="sizeMD" class="text-white"></app-icon>
+        <span>Download CV (DOC)</span>
+      </button>
+    </div>
+
+    <!-- Contact Form Toggle -->
+    <div class="w-full flex justify-center">
+      <button 
+        (click)="toggleContactForm()"
+        class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center space-x-2">
+        <app-icon [iconType]="showContactForm ? 'CLOSE' : 'MESSAGE'" [iconSize]="sizeMD" class="text-white"></app-icon>
+        <span>{{ showContactForm ? 'Close Contact Form' : 'Send Message' }}</span>
+      </button>
+    </div>
+
+    <!-- Enhanced Contact Form -->
+    <div *ngIf="showContactForm" class="w-full max-w-2xl bg-gray-900 rounded-lg p-6 shadow-xl">
+      <div *ngIf="formSuccess" class="mb-4 p-4 bg-green-500 text-white rounded-lg">
+        Thank you! Your message has been sent successfully. I'll get back to you soon.
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Name Field -->
+          <div class="flex flex-col">
+            <label for="name" class="text-gray-300 font-medium mb-2">Name *</label>
+            <input 
+              id="name"
+              type="text" 
+              formControlName="name"
+              class="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors"
+              [class.border-red-500]="isFieldInvalid('name')"
+              placeholder="Your full name">
+            <span *ngIf="isFieldInvalid('name')" class="text-red-400 text-sm mt-1">
+              {{ getFieldError('name') }}
+            </span>
+          </div>
+
+          <!-- Email Field -->
+          <div class="flex flex-col">
+            <label for="email" class="text-gray-300 font-medium mb-2">Email *</label>
+            <input 
+              id="email"
+              type="email" 
+              formControlName="email"
+              class="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors"
+              [class.border-red-500]="isFieldInvalid('email')"
+              placeholder="your.email@example.com">
+            <span *ngIf="isFieldInvalid('email')" class="text-red-400 text-sm mt-1">
+              {{ getFieldError('email') }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Company Field -->
+        <div class="flex flex-col">
+          <label for="company" class="text-gray-300 font-medium mb-2">Company</label>
+          <input 
+            id="company"
+            type="text" 
+            formControlName="company"
+            class="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="Your company name (optional)">
+        </div>
+
+        <!-- Subject Field -->
+        <div class="flex flex-col">
+          <label for="subject" class="text-gray-300 font-medium mb-2">Subject *</label>
+          <input 
+            id="subject"
+            type="text" 
+            formControlName="subject"
+            class="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors"
+            [class.border-red-500]="isFieldInvalid('subject')"
+            placeholder="What would you like to discuss?">
+          <span *ngIf="isFieldInvalid('subject')" class="text-red-400 text-sm mt-1">
+            {{ getFieldError('subject') }}
+          </span>
+        </div>
+
+        <!-- Message Field -->
+        <div class="flex flex-col">
+          <label for="message" class="text-gray-300 font-medium mb-2">Message *</label>
+          <textarea 
+            id="message"
+            formControlName="message"
+            rows="5"
+            class="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+            [class.border-red-500]="isFieldInvalid('message')"
+            placeholder="Tell me about your project, requirements, or just say hello!"></textarea>
+          <span *ngIf="isFieldInvalid('message')" class="text-red-400 text-sm mt-1">
+            {{ getFieldError('message') }}
+          </span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-end">
+          <button 
+            type="submit"
+            [disabled]="(isLoading$ | async) || contactForm.invalid"
+            class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:transform-none disabled:cursor-not-allowed flex items-center space-x-2">
+            <span *ngIf="isLoading$ | async" class="animate-spin">⚪</span>
+            <app-icon *ngIf="!(isLoading$ | async)" iconType="SEND" [iconSize]="sizeMD" class="text-white"></app-icon>
+            <span>{{ (isLoading$ | async) ? 'Sending...' : 'Send Message' }}</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Direct Contact Section -->
+    <div class="bg-gray-900 text-gray-400 rounded-lg flex justify-between items-center w-full max-w-md">
         <div class="text-left w-full p-4">
             hectorr9577@gmail.com
         </div>
@@ -23,21 +147,26 @@
         </div>
     </div>
 
+    <!-- Social Links -->
     <div class="w-full flex space-x-4 justify-center items-center p-4">
-      <a href="https://github.com/HectorARG" target="_blank" >
-        <app-icon class="text-white" iconType="GITHUB" [iconSize]="sizeXL"></app-icon>
+      <a href="https://github.com/HectorARG" target="_blank" 
+         class="transform hover:scale-110 transition-transform duration-300" >
+        <app-icon class="text-white hover:text-indigo-400" iconType="GITHUB" [iconSize]="sizeXL"></app-icon>
       </a>
 
-      <a href="https://gitlab.com/HectorRoG" target="_blank" >
-        <app-icon class="text-white" iconType="GITLAB" [iconSize]="sizeXL"></app-icon>
+      <a href="https://gitlab.com/HectorRoG" target="_blank" 
+         class="transform hover:scale-110 transition-transform duration-300" >
+        <app-icon class="text-white hover:text-orange-400" iconType="GITLAB" [iconSize]="sizeXL"></app-icon>
       </a>
 
-      <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" >
-        <app-icon class="text-white" iconType="LINKEDIN" [iconSize]="sizeXL"></app-icon>
+      <a href="https://www.linkedin.com/in/hector-adrian-roman79509/" target="_blank" 
+         class="transform hover:scale-110 transition-transform duration-300" >
+        <app-icon class="text-white hover:text-blue-400" iconType="LINKEDIN" [iconSize]="sizeXL"></app-icon>
       </a>
 
-      <a href="https://twitter.com/adriianroman" target="_blank" >
-        <app-icon class="text-white" iconType="TWITTER" [iconSize]="sizeXL"></app-icon>
+      <a href="https://twitter.com/adriianroman" target="_blank" 
+         class="transform hover:scale-110 transition-transform duration-300" >
+        <app-icon class="text-white hover:text-sky-400" iconType="TWITTER" [iconSize]="sizeXL"></app-icon>
       </a>
 
     </div>
